@@ -1,5 +1,7 @@
 # scarebnb
 
+# trello link: https://trello.com/b/vx4gBP9g/scarebnb
+
 ScareBnB is an app that allows users to earn revenue by renting rooms in their houses which happen to be haunted. This allows adventurous travelers to book lodging in unique settings, creating unique experiences.
 
 This app will be built using React and Bootstrap for the front end experience. For the server, Node.js and Express.js will handle serving files. PostgreSQL and Knex will be used for database access. Socket.io will be used for communication between traveler and host and for booking confirmation.
