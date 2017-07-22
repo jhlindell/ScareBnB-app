@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Property from './components/property.js';
 
 class App extends Component {
+  state = {
+    property: {
+          owner_id: 1,
+          property_name: 'Haunted Hummus House',
+          street_address: '1789 Nutscaping View',
+          city: 'Boulder',
+          state: 'CO',
+          zip_code: 80301,
+          photo_url: '',
+          description: 'This place is haunted as fuck. The ghosts here will scare the falafel out of you. Book here if you got the stones.',
+          amenities: 'running water and power',
+          nightly_price: 29.99,
+          house_rules: 'Keep the noise down.'
+        }
+  }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <h1>Whassssssup World?</h1>
+        <Property property={this.state.property}/>
       </div>
-    );
+    )
   }
 }
 
