@@ -1,0 +1,21 @@
+/*color pallet
+Midnight blue - #0e004f
+Shadow blue -#241566
+OffWhite -#e2e5d5
+dark gray -#262d38
+yello -#dbdb34
+orange - #eaac10
+*/
+
+
+.midnightBlue{
+  background-color: #0e004f;
+}
+
+
+.PropertyCard{
+  /*height:40vh;*/
+  width:30%;
+  float:left;
+  margin:1.5%;
+}
