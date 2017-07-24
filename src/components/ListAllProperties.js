@@ -1,8 +1,8 @@
 import React from "react";
 import { Card, CardImg, CardText, CardBlock, CardLink,
   CardTitle, CardSubtitle, Container, Row, Col } from 'reactstrap';
-import PropertyCard from './PropertyCard.js';
-
+import PropertyCard from './propertyCard.js';
+import {connect} from 'react-redux';
 
 
 class ListAllProperties extends React.Component {
@@ -16,9 +16,9 @@ class ListAllProperties extends React.Component {
           </Col>
           <Col xs='10'>
 
-              {this.props.AllProperties.map((el, i)=>{
+              {this.props.properties.map((property, i)=>{
                 return (
-                  <PropertyCard key={i} property={el} />
+                  <PropertyCard key={i} property={property} />
                 )
               })}
 
@@ -29,4 +29,10 @@ class ListAllProperties extends React.Component {
   }
 }
 
-export default ListAllProperties;
+function mapStateToProps(state) {
+  return {
+    properties: state.properties
+  };
+}
+
+export default connect(mapStateToProps)(ListAllProperties);
