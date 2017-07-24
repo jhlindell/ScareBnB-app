@@ -1,8 +1,5 @@
 import React from "react";
-import { Card, CardImg, CardText, CardBlock, CardLink,
-  CardTitle, CardSubtitle, Row, Col, Container} from 'reactstrap';
-
-
+import {Row, Col, Container} from 'reactstrap';
 
 class FullPropertyDisplay extends React.Component {
   render(){
@@ -10,7 +7,7 @@ class FullPropertyDisplay extends React.Component {
       <Container>
         <Row>
           <Col xs="6">
-            <img src={this.props.Property.photo_url} height="200px"></img>
+            <img src={this.props.Property.photo_url} alt="a something should go here" height="200px"></img>
           </Col>
           <Col xs="6">
             <h3>
