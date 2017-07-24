@@ -1,6 +1,8 @@
 import React from "react";
 
-class Property extends React.Component {
+
+
+class PropertyCard extends React.Component {
   render(){
     return (
       <div>
@@ -15,4 +17,4 @@ class Property extends React.Component {
   }
 }
 
-export default Property;
+export default PropertyCard;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Property from './components/property.js';
+import PropertyCard from './components/propertyCard.js';
 import {
   BrowserRouter as Router,
   Route,
@@ -29,7 +29,7 @@ class App extends Component {
         <div>
           <h1>Nav Links:</h1>
           <Link to="/">Home</Link>
-          <Route path="/property/" component={() => <Property property={this.state.property} />} />
+          <Route path="/property/" component={() => <PropertyCard property={this.state.property} />} />
         </div>
       </Router>
     )
