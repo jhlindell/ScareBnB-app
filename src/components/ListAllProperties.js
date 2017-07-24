@@ -15,13 +15,13 @@ class ListAllProperties extends React.Component {
 
           </Col>
           <Col xs='10'>
-            <Col xs="12">
+
               {this.props.AllProperties.map((el, i)=>{
                 return (
                   <PropertyCard key={i} property={el} />
                 )
               })}
-            </Col>
+
           </Col>
         </Row>
       </Container>

@@ -121,7 +121,7 @@ class App extends Component {
       <Router>
         <div>
           <h1>Nav Links:</h1>
-          <Link to="/">Home</Link>
+          <Link to="/" component={()=> <NavBar />}>Home</Link>
           <Route path="/property/" component={() => <ListAllProperties AllProperties={this.state.property} />} />
         </div>
       </Router>
