@@ -19,3 +19,15 @@ orange - #eaac10
   float:left;
   margin:1.5%;
 }
+
+.makeReservationBox{
+  /*background-color: red;*/
+  border: 1px solid black;
+  height: 35vh;
+}
+
+.calendarBox{
+  /*background-color: green;*/
+  height: 35vh;
+  border: 1px solid black;
+}

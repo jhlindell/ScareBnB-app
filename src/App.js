@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import PropertyCard from './components/propertyCard.js';
 import ListAllProperties from "./components/ListAllProperties.js"
+import NavBar from "./components/NavBar.js"
+import FullPropertyDisplay from "./components/FullPropertyDisplay.js"
 import {
   BrowserRouter as Router,
   Route,
@@ -15,11 +17,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <h1>Nav Links:</h1>
-          <NavBar />
-          <Link to="/" >Home</Link>
-          <Route path="/" component={()=> <NavBar />} />
-          <Route path="/property/" component={() => <ListAllProperties />} />
+          <Route path="/"  component={()=> <NavBar />} />
+          <Route path="/"  component={()=> <FullPropertyDisplay Property={this.state.property[0]}/>} />
+          <Route path="/property/" component={() => <ListAllProperties AllProperties={this.state.property} />} />
         </div>
       </Router>
     )
@@ -27,5 +27,3 @@ class App extends Component {
 }
 
 export default App;
-
-<Link to="/property" >Properties</Link>
