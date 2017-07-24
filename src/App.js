@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import ListAllProperties from "./components/ListAllProperties"
-import NavBar from "./components/NavBar"
-import FullPropertyDisplay from "./components/FullPropertyDisplay"
+import ListAllProperties from "./components/ListAllProperties";
+import NavBar from "./components/NavBar";
+import FullPropertyDisplay from "./components/FullPropertyDisplay";
+import PostProperty from "./components/PostProperty";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,7 +17,8 @@ class App extends Component {
       <Router>
         <div>
           <Route path="/"  component={()=> <NavBar />} />
-          <Route path="/" component={() => <ListAllProperties />} />
+          <Route exact path="/" component={() => <ListAllProperties />} />
+          <Route path="/postproperty" component={() => <PostProperty />} />
         </div>
       </Router>
     )
