@@ -31,3 +31,11 @@ orange - #eaac10
   height: 35vh;
   border: 1px solid black;
 }
+
+.hauntPropBox {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  background-color: yellow;
+}

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import PropertyCard from './components/PropertyCard.js';
+import PropertyCard from "./components/PropertyCard.js";
 import ListAllProperties from "./components/ListAllProperties.js"
+import PostProperty from "./components/PostProperty.js"
 import NavBar from "./components/NavBar.js"
 import FullPropertyDisplay from "./components/FullPropertyDisplay.js"
 import {
@@ -123,8 +124,9 @@ class App extends Component {
       <Router>
         <div>
           <Route path="/"  component={()=> <NavBar />} />
-          <Route path="/"  component={()=> <FullPropertyDisplay Property={this.state.property[0]}/>} />
+          <Route path="/FullPropertyDisplay"  component={()=> <FullPropertyDisplay Property={this.state.property[0]}/>} />
           <Route path="/property/" component={() => <ListAllProperties AllProperties={this.state.property} />} />
+          <Route path="/PostProperty" component={() => <PostProperty />} />
         </div>
       </Router>
     )
