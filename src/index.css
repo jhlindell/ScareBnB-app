@@ -15,7 +15,6 @@ font-family: 'Creepster', cursive;
 body{
   position: relative;
   overflow: scroll;
-
 }
 
 .backgroundImage{
@@ -31,8 +30,9 @@ body{
 
 
 .cardtitle{
-  max-height: 100px;
-  min-height: 100px;
+  max-height: 80px;
+  min-height: 80px;
+  text-align: center;
 }
 
 .makeReservationBox{
