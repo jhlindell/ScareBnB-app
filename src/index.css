@@ -5,7 +5,12 @@ OffWhite -#e2e5d5
 dark gray -#262d38
 yello -#dbdb34
 orange - #eaac10
+
+font-family: 'Gloria Hallelujah', cursive;
 */
+
+
+
 
 body{
   position: relative;
@@ -59,6 +64,7 @@ body{
 
   background: rgba(38, 45, 56, 0.7) !important;
   color: #e2e5d5;
+
 }
 .card:hover{
 
