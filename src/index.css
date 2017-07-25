@@ -57,6 +57,7 @@ body{
 
 .ListAllProperties{
   margin-top: 50px;
+  overflow: auto;
 }
 
 .card{

@@ -117,7 +117,7 @@ class PostProperty extends React.Component {
                   </Col>
                 </FormGroup>
               </div>
-              <h6 className="formDescription">Location of doom</h6>
+              <h6 className="formDescription">The doomed location</h6>
               <div className="hauntPropBox">
                 <FormGroup row>
                   <Label for="street_address" sm={2}>Street address</Label>
@@ -154,7 +154,7 @@ class PostProperty extends React.Component {
                   </Col>
 
                   <Label for="zip" sm={1}>Zip</Label>
-                  <Col xs={3}>
+                  <Col xs={2}>
                     <Input
                       className="propertyFormInput"
                       type="text"
