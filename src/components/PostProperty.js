@@ -44,7 +44,7 @@ class PostProperty extends React.Component {
         <Col xs={{size: 10, offset:1 }}>
           <div>
             <Form onSubmit={this.onFormSubmit}>
-              <h6 className="formDescription">Tell us about your haunt</h6>
+              <h6 className="formDescription">About your haunt</h6>
               <div className="hauntPropBox">
                 <FormGroup row>
                   <Label for="property_name" sm={2}>Property Title</Label>
@@ -81,7 +81,7 @@ class PostProperty extends React.Component {
                   </Col>
                 </FormGroup>
               </div>
-              <h6 className="formDescription">Let's get some haunting details</h6>
+              <h6 className="formDescription">Frightening features</h6>
               <div className="hauntPropBox">
                 <FormGroup row>
                   <Label for="amenities" sm={2}>Amenities</Label>
@@ -117,7 +117,7 @@ class PostProperty extends React.Component {
                   </Col>
                 </FormGroup>
               </div>
-              <h6 className="formDescription">Where is your haunt?</h6>
+              <h6 className="formDescription">Location of doom</h6>
               <div className="hauntPropBox">
                 <FormGroup row>
                   <Label for="street_address" sm={2}>Street address</Label>
@@ -131,8 +131,10 @@ class PostProperty extends React.Component {
                   </Col>
                 </FormGroup>
                 <FormGroup row>
-                  <Label for="city" sm={2}>City</Label>
-                  <Col xs={10}>
+
+                  <Col sm={1}></Col>
+                  <Label for="city" sm={1}>City</Label>
+                  <Col xs={3}>
                     <Input
                       className="propertyFormInput"
                       type="text"
@@ -140,10 +142,9 @@ class PostProperty extends React.Component {
                       value={this.state.city}
                       name="city" />
                   </Col>
-                </FormGroup>
-                <FormGroup row>
-                  <Label for="state" sm={2}>State</Label>
-                  <Col xs={10}>
+
+                  <Label for="state" sm={1}>State</Label>
+                  <Col xs={2}>
                     <Input
                       className="propertyFormInput"
                       type="text"
@@ -151,10 +152,9 @@ class PostProperty extends React.Component {
                       value={this.state.state}
                       name="state" />
                   </Col>
-                </FormGroup>
-                <FormGroup row>
-                  <Label for="zip" sm={2}>Zip</Label>
-                  <Col xs={10}>
+
+                  <Label for="zip" sm={1}>Zip</Label>
+                  <Col xs={3}>
                     <Input
                       className="propertyFormInput"
                       type="text"
@@ -162,6 +162,7 @@ class PostProperty extends React.Component {
                       value={this.state.zip_code}
                       name="zip_code" />
                   </Col>
+
                 </FormGroup>
               </div>
                 <Button className="postPropertySubmit"><span className="propSubmitBtnText">Submit</span></Button>
