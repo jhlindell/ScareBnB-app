@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import ListAllProperties from "./components/ListAllProperties";
+import ListAllProperties from "./containers/ListAllProperties";
 import NavBar from "./components/NavBar";
-import FullPropertyDisplay from "./components/FullPropertyDisplay";
+import FullPropertyDisplay from "./containers/FullPropertyDisplay";
 import PostProperty from "./components/PostProperty";
 import Background from "./components/Background";
 import {
@@ -20,7 +20,8 @@ class App extends Component {
           <Route path="/"  component={()=> <NavBar />} />
           <Route path="/"  component={()=> <Background />} />
           <Route exact path="/" component={() => <ListAllProperties />} />
-          <Route path="/postproperty" component={() => <PostProperty />} />
+          <Route path="/postproperty" component={()=><PostProperty />} />
+          <Route path="/property/:id" component={()=><FullPropertyDisplay />} />
         </div>
       </Router>
     )
@@ -28,5 +29,3 @@ class App extends Component {
 }
 
 export default App;
-
-// <Route path="/property/"  component={()=> <FullPropertyDisplay />} />

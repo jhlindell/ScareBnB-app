@@ -8,10 +8,9 @@ export function selectProperty(property) {
 }
 
 export function postProperty(property) {
-  console.log(property);
   const url = 'http://localhost:8080/api/properties'
   const request = axios.post(url, property);
-
+  console.log('post action sent');
   return {
     type: 'POST_PROPERTY',
     payload: request
