@@ -4,10 +4,18 @@ import PropertyCard from './propertyCard.js';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {selectProperty} from '../actions/index';
-
+import {getAllProperties} from '../actions/index';
 
 class ListAllProperties extends React.Component {
+  componentDidMount() {
+    this.props.getAllProperties();
+    
+  }
+
   renderList(){
+    if(!this.props.properties){
+      return <div>loading</div>
+    }
     return this.props.properties.map((property, i)=>{
       return (
         <PropertyCard
@@ -41,7 +49,8 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({selectProperty: selectProperty}, dispatch);
+  return bindActionCreators(
+    {selectProperty: selectProperty, getAllProperties: getAllProperties}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListAllProperties);
