@@ -40,16 +40,17 @@ class PostProperty extends React.Component {
 
   render(){
     return (
-      <Container>
+      <Container className="postPropertyForm">
         <Col xs={{size: 10, offset:1 }}>
           <div>
             <Form onSubmit={this.onFormSubmit}>
-              Tell us about your haunt
+              <h6 className="formDescription">Tell us about your haunt</h6>
               <div className="hauntPropBox">
                 <FormGroup row>
                   <Label for="property_name" sm={2}>Property Title</Label>
                   <Col xs={10}>
                   <Input
+                    className="propertyFormInput"
                     type="text"
                     name="property_name"
                     onChange={(e) => {this.handleInputChange(e)}}
@@ -61,6 +62,7 @@ class PostProperty extends React.Component {
                   <Label for="description" sm={2}>Property description</Label>
                   <Col xs={10}>
                   <Input
+                    className="propertyFormInput"
                     type="text"
                     onChange={(e) => {this.handleInputChange(e)}}
                     value={this.state.description}
@@ -71,6 +73,7 @@ class PostProperty extends React.Component {
                   <Label for="Photo url" sm={2}>Photo url</Label>
                   <Col xs={10}>
                   <Input
+                    className="propertyFormInput"
                     type="url"
                     onChange={(e) => {this.handleInputChange(e)}}
                     value={this.state.photo_url}
@@ -78,12 +81,13 @@ class PostProperty extends React.Component {
                   </Col>
                 </FormGroup>
               </div>
-              Let's get some haunting details
+              <h6 className="formDescription">Let's get some haunting details</h6>
               <div className="hauntPropBox">
                 <FormGroup row>
                   <Label for="amenities" sm={2}>Amenities</Label>
                   <Col xs={10}>
                   <Input
+                    className="propertyFormInput"
                     type="text"
                     onChange={(e) => {this.handleInputChange(e)}}
                     value={this.state.amenities}
@@ -94,6 +98,7 @@ class PostProperty extends React.Component {
                   <Label for="house_rules" sm={2}>House rules</Label>
                   <Col xs={10}>
                   <Input
+                    className="propertyFormInput"
                     type="text"
                     onChange={(e) => {this.handleInputChange(e)}}
                     value={this.state.house_rules}
@@ -104,6 +109,7 @@ class PostProperty extends React.Component {
                   <Label for="nightly_price" sm={2}>Nightly price</Label>
                   <Col xs={10}>
                   <Input
+                    className="propertyFormInput"
                     type="number"
                     onChange={(e) => {this.handleInputChange(e)}}
                     value={this.state.nightly_price}
@@ -111,12 +117,13 @@ class PostProperty extends React.Component {
                   </Col>
                 </FormGroup>
               </div>
-              Where is your haunt?
+              <h6 className="formDescription">Where is your haunt?</h6>
               <div className="hauntPropBox">
                 <FormGroup row>
                   <Label for="street_address" sm={2}>Street address</Label>
                   <Col xs={10}>
                     <Input
+                      className="propertyFormInput"
                       type="text"
                       onChange={(e) => {this.handleInputChange(e)}}
                       value={this.state.street_address}
@@ -127,6 +134,7 @@ class PostProperty extends React.Component {
                   <Label for="city" sm={2}>City</Label>
                   <Col xs={10}>
                     <Input
+                      className="propertyFormInput"
                       type="text"
                       onChange={(e) => {this.handleInputChange(e)}}
                       value={this.state.city}
@@ -137,6 +145,7 @@ class PostProperty extends React.Component {
                   <Label for="state" sm={2}>State</Label>
                   <Col xs={10}>
                     <Input
+                      className="propertyFormInput"
                       type="text"
                       onChange={(e) => {this.handleInputChange(e)}}
                       value={this.state.state}
@@ -147,6 +156,7 @@ class PostProperty extends React.Component {
                   <Label for="zip" sm={2}>Zip</Label>
                   <Col xs={10}>
                     <Input
+                      className="propertyFormInput"
                       type="text"
                       onChange={(e) => {this.handleInputChange(e)}}
                       value={this.state.zip_code}
@@ -154,7 +164,7 @@ class PostProperty extends React.Component {
                   </Col>
                 </FormGroup>
               </div>
-                <Button>Submit</Button>
+                <Button className="postPropertySubmit"><span className="propSubmitBtnText">Submit</span></Button>
            </Form>
           </div>
         </Col>
