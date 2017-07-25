@@ -3,18 +3,34 @@ import { Button, Col, Container, Form, FormGroup, Label, Input, FormText, Row } 
 
 
 class PostProperty extends React.Component {
+  constructor(props){
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    // console.log(this.input.focus());
+
+
+    console.log(this.refs);
+  }
+
+
+
   render(){
     return (
       <Container>
         <Col xs={{size: 10, offset:1 }}>
           <div>
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
               Tell us about your haunt
               <div className="hauntPropBox">
                 <FormGroup row>
                   <Label for="title" sm={2}>Property Title</Label>
                   <Col xs={10}>
-                  <Input type="text" name="title" placeholder=""/>
+                  <Input type="text" name="title" defaultValue="donkey" ref="title"/>
                 </Col>
               </FormGroup>
                 <FormGroup row>

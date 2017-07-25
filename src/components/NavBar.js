@@ -7,7 +7,7 @@ class NavBar extends React.Component {
   render(){
     return (
       <div>
-        <Navbar color="faded" light toggleable>
+        <Navbar color="faded" light toggleable className="fixed-top navBarFixed">
           <NavbarToggler right/>
           <NavbarBrand href="/">ScareBnB</NavbarBrand>
           <Collapse navbar>

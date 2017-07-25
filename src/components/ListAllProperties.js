@@ -21,12 +21,14 @@ class ListAllProperties extends React.Component {
 
   render(){
     return (
-      <Container>
+      <Container className="ListAllProperties">
         <Row>
           <Col xs='2'>
           </Col>
           <Col xs='10'>
+            <Row>
               {this.renderList()}
+            </Row>
           </Col>
         </Row>
       </Container>

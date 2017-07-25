@@ -7,17 +7,26 @@ yello -#dbdb34
 orange - #eaac10
 */
 
+body{
+  position: relative;
+  overflow: scroll;
+
+}
+
+.backgroundImage{
+  position: fixed;
+  height:100vh;
+  width:100vw;
+}
 
 .midnightBlue{
   background-color: #0e004f;
 }
 
 
-.PropertyCard{
-  /*height:40vh;*/
-  width:30%;
-  float:left;
-  margin:1.5%;
+.cardtitle{
+  max-height: 100px;
+  min-height: 100px;
 }
 
 .makeReservationBox{
@@ -38,4 +47,51 @@ orange - #eaac10
   border: 1px solid black;
   margin-bottom: 20px;
   background-color: yellow;
+}
+
+.PropertyCardFade{
+  /*background-color: black;*/
+}
+.card{
+  margin-top: 30px;
+  min-height: 450px;
+  max-height: 450px;
+
+  background: rgba(38, 45, 56, 0.7) !important;
+  color: #e2e5d5;
+}
+.card:hover{
+
+  box-shadow: 0 0 15px #6b6862;
+}
+
+.overflow{
+  overflow: scroll;
+}
+
+.cardButton{
+  margin: 10px;
+  margin-top: 20px;
+  background: #131414 !important;
+  /*vertical-align: middle;*/
+}
+.cardButton:hover{
+  border: 4px solid #ccab41;
+  box-shadow: 0 0 10px white;
+  color:#d3d68d;
+}
+.cardButtonText{
+  margin-bottom: 40px;
+  color: #d3d68d
+}
+.cardButtonText:hover{
+  color: #ccab41;
+}
+
+.navBarFixed{
+  position: absolute;
+}
+
+.ListAllProperties{
+  margin-top: 50px;
 }
