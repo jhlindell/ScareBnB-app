@@ -14,6 +14,7 @@ font-family: 'pster', cursive;
 body{
   position: relative;
   overflow: scroll;
+  padding-bottom: 50px;
 }
 
 .backgroundImage{

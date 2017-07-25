@@ -4,17 +4,6 @@ import { Card,CardText, CardBlock,
 
 class PropertyCard extends React.Component {
 
-  description(){
-    let words = this.props.property.description.split('').map(function(element,index){
-      if(index<100){
-        return element
-      };
-    })
-    words.join(',')
-    console.log(words);
-    return words
-  }
-
   render(){
     return (
       <Col xs="12" sm="6" md="4" className="PropertyCardFade">
