@@ -8,6 +8,7 @@ class PostProperty extends React.Component {
   constructor(props){
     super(props);
     this.state ={
+      owner_id: 1,
       property_name: '',
       description: '',
       photo_url: '',
