@@ -9,8 +9,7 @@ orange - #eaac10
 font-family: 'pster', cursive;
 */
 
-
-
+/*----------GENERAL------------------*/
 
 body{
   position: relative;
@@ -28,49 +27,54 @@ body{
   background-color: #0e004f;
 }
 
-
-.cardtitle{
-  max-height: 80px;
-  min-height: 80px;
-  text-align: center;
+.overflow{
+  overflow: scroll;
 }
 
-.makeReservationBox{
-  border: 1px solid black;
-  height: 35vh;
-}
+/*----------NAV BAR------------------*/
 
-.calendarBox{
-  height: 35vh;
-  border: 1px solid black;
-}
-
-.hauntPropBox {
-  padding: 10px;
+.navItem {
   border-radius: 5px;
-  border: 1px solid black;
-  margin-bottom: 20px;
-  background: rgba(38, 45, 56, 0.7) !important;
-  color: #e2e5d5;
+  border: 1px solid rgba(153, 155, 144, 0.3) !important;
 }
 
-.PropertyCardFade{
-  /*background-color: black;*/
+.navItem:hover {
+  box-shadow: 0 0 5px #6b6862;
 }
+
+.scaryText {
+  font-family: 'Creepster', cursive;
+}
+.navBarFixed{
+  background: rgba(38, 45, 56, 0.0) !important;
+  position: absolute;
+}
+.navBarText {
+  color: #999b90 !important;
+}
+
+/*----------PROPERTY CARDS------------------*/
+
+.ListAllProperties{
+  margin-top: 50px;
+}
+
 .card{
   margin-top: 30px;
   min-height: 450px;
   max-height: 450px;
   background: rgba(38, 45, 56, 0.7) !important;
   color: #e2e5d5;
-
 }
+
 .card:hover{
   box-shadow: 0 0 15px #6b6862;
 }
 
-.overflow{
-  overflow: scroll;
+.cardtitle {
+  max-height: 80px;
+  min-height: 80px;
+  text-align: center;
 }
 
 .cardButton{
@@ -80,8 +84,8 @@ body{
 }
 .cardButton:hover{
   border: 4px solid #ccab41;
-  box-shadow: 0 0 10px white;
-  color:#d3d68d;
+  box-shadow: 0 0 5px #ccab41;
+  /*color:#d3d68d;*/
 }
 .cardButtonText{
   margin-bottom: 40px;
@@ -91,20 +95,15 @@ body{
   color: #ccab41;
 }
 
-.scaryText {
-  font-family: 'Creepster', cursive;
-}
-.navBarFixed{
-  /*background-color: #5b5b58 !important;*/
-  background: rgba(38, 45, 56, 0.0) !important;
-  position: absolute;
-}
-.navBarText {
-  color: #999b90 !important;
-}
+/*----------POST PROPERTY------------------*/
 
-.ListAllProperties{
-  margin-top: 50px;
+.hauntPropBox {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  background: rgba(38, 45, 56, 0.7) !important;
+  color: #e2e5d5;
 }
 
 .propertyFormInput {
@@ -123,7 +122,6 @@ body{
   background: rgba(226, 229, 213, 1.0) !important;
   margin-bottom: 50px;
 }
-
 
 .postPropertySubmit:hover {
   background: rgba(226, 229, 213, 0.0) !important;

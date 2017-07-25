@@ -12,11 +12,8 @@ class NavBar extends React.Component {
           <NavbarBrand href="/" className="navBarText"><span className="scaryText">scare</span> BnB</NavbarBrand>
           <Collapse navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/property/" className="navBarText">Properties</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap" className="navBarText">Github</NavLink>
+              <NavItem className="navItem">
+                <NavLink href="/property/" className="navBarText">Post a room</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
