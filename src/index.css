@@ -138,3 +138,56 @@ body{
 .propSubmitBtnText{
   color: rgba(38, 45, 56, 1.0);
 }
+
+/*----------FULL PROPERTY------------------*/
+
+.fullPropContainer {
+  margin-top: 100px;
+}
+
+/*.fullPropDesc {
+  background: rgba(38, 45, 56, 0.8);
+  color: #999b90;
+  padding-: 20px;
+}*/
+
+
+.fullPropImage {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.fullPropImageDiv {
+  margin-left: auto;
+  min-width: 80%;
+  max-width: 80%;
+  border: 5px solid rgba(38, 45, 56, 0.7);
+  overflow: hidden;
+}
+
+.fullPropDetails {
+  background: rgba(38, 45, 56, 0.8);
+  color: #999b90;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.fullPropDetsCol {
+  padding-left: 20px;
+}
+
+.calendarBox {
+  min-height: 250px;
+  max-height: 250px;
+  background: rgba(38, 45, 56, 0.8);
+  color: #999b90;
+}
+
+.makeReservationBox {
+  min-height: 250px;
+  max-height: 250px;
+  background: rgba(38, 45, 56, 0.8);
+  color: #999b90;
+}
