@@ -1,6 +1,8 @@
 # scarebnb
 
 # trello link: https://trello.com/b/vx4gBP9g/scarebnb
+# database repo: https://github.com/jhlindell/scareDB
+# heroku database link: https://scarebnb-db.herokuapp.com
 
 ScareBnB is an app that allows users to earn revenue by renting rooms in their houses which happen to be haunted. This allows adventurous travelers to book lodging in unique settings, creating unique experiences.
 

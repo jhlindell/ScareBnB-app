@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import Property from './components/property.js';
+import ListAllProperties from "./containers/ListAllProperties";
+import NavBar from "./components/NavBar";
+import FullPropertyDisplay from "./containers/FullPropertyDisplay";
+import PostProperty from "./containers/PostProperty";
+import Background from "./components/Background";
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
+import "./index.css";
 
 class App extends Component {
-  state = {
-    property: {
-      owner_id: 1,
-      property_name: 'Haunted Hummus House',
-      street_address: '1789 Nutscaping View',
-      city: 'Boulder',
-      state: 'CO',
-      zip_code: 80301,
-      photo_url: '',
-      description: 'This place is haunted as fuck. The ghosts here will scare the falafel out of you. Book here if you got the stones.',
-      amenities: 'running water and power',
-      nightly_price: 29.99,
-      house_rules: 'Keep the noise down.'
-    }
-  }
   render() {
     return (
       <Router>
         <div>
-          <h1>Nav Links:</h1>
-          <Link to="/">Home</Link>
-          <Route path="/property/" component={() => <Property property={this.state.property} />} />
+          <Route path="/"  component={NavBar} />
+          <Route path="/"  component={Background} />
+          <Route exact path="/" component={ListAllProperties} />
+          <Route path="/postproperty" component={PostProperty} />
+          <Route path="/property/:id" component={FullPropertyDisplay} />
         </div>
       </Router>
     )
