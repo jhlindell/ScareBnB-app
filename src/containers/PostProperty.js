@@ -192,7 +192,7 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
   return bindActionCreators(
-    {postProperty: postProperty}, dispatch);
+    {postProperty: postProperty, }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostProperty);

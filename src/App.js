@@ -3,7 +3,7 @@ import './App.css';
 import ListAllProperties from "./containers/ListAllProperties";
 import NavBar from "./components/NavBar";
 import FullPropertyDisplay from "./containers/FullPropertyDisplay";
-import PostProperty from "./components/PostProperty";
+import PostProperty from "./containers/PostProperty";
 import Background from "./components/Background";
 import {
   BrowserRouter as Router,
