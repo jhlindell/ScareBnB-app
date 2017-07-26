@@ -16,6 +16,7 @@ class ListAllProperties extends React.Component {
       return <div>loading</div>
     }
     return this.props.properties.map((property, i)=>{
+      console.log(property);
       return (
         <PropertyCard
           key={i}
