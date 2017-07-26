@@ -15,6 +15,9 @@ class NavBar extends React.Component {
               <NavItem className="navItem">
                 <NavLink href="/postproperty" className="navBarText">Post a room</NavLink>
               </NavItem>
+              <NavItem className="navItem">
+                <NavLink href="/userprofile" className="navBarText">User profile</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

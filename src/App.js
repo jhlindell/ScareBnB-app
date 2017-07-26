@@ -4,6 +4,7 @@ import ListAllProperties from "./components/ListAllProperties";
 import NavBar from "./components/NavBar";
 import FullPropertyDisplay from "./components/FullPropertyDisplay";
 import PostProperty from "./components/PostProperty";
+import UserProfile from "./components/UserProfile";
 import Background from "./components/Background";
 import {
   BrowserRouter as Router,
@@ -21,9 +22,8 @@ class App extends Component {
           <Route path="/"  component={()=> <Background />} />
           <Route exact path="/" component={() => <ListAllProperties />} />
           <Route path="/postproperty" component={() => <PostProperty />} />
-          <Route path="/fullproperty" component={() => <FullPropertyDisplay />}
-
-         />
+          <Route path="/fullproperty" component={() => <FullPropertyDisplay />} />
+          <Route path="/userprofile" component={() => <UserProfile />} />
         </div>
       </Router>
     )
