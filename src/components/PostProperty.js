@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Container, Form, FormGroup, Label, Input, FormText, Row } from 'reactstrap';
+import { Button, Col, Container, Form, FormGroup, Label, Input} from 'reactstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {postProperty} from '../actions/index';
@@ -184,4 +184,4 @@ function mapDispatchToProps(dispatch){
     {postProperty: postProperty}, dispatch);
 }
 
-export default connect(mapDispatchToProps, mapDispatchToProps)(PostProperty);
+export default connect(mapStateToProps, mapDispatchToProps)(PostProperty);

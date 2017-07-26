@@ -8,7 +8,6 @@ import Background from "./components/Background";
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
 import "./index.css";
 
@@ -17,11 +16,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route path="/"  component={()=> <NavBar />} />
-          <Route path="/"  component={()=> <Background />} />
-          <Route exact path="/" component={() => <ListAllProperties />} />
-          <Route path="/postproperty" component={()=><PostProperty />} />
-          <Route path="/property/:id" component={()=><FullPropertyDisplay />} />
+          <Route path="/"  component={NavBar} />
+          <Route path="/"  component={Background} />
+          <Route exact path="/" component={ListAllProperties} />
+          <Route path="/postproperty" component={PostProperty} />
+          <Route path="/property/:id" component={FullPropertyDisplay} />
         </div>
       </Router>
     )

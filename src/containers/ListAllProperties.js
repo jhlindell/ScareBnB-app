@@ -9,7 +9,6 @@ import {getAllProperties} from '../actions/index';
 class ListAllProperties extends React.Component {
   componentDidMount() {
     this.props.getAllProperties();
-
   }
 
   renderList(){
