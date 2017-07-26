@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Col, Container, Form, FormGroup, Label, Input, FormText, Row } from 'reactstrap';
+import { Button, Col, Container, Form, FormGroup, Label, Input} from 'reactstrap';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {postProperty} from '../actions/index';
@@ -24,6 +24,14 @@ class PostProperty extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    const { history, properties } = this.props;
+
+    if (nextProps.properties.length > properties.length) {
+      history.push('property/' + properties[properties.length - 1].id)
+    }
+  }
+
   handleInputChange(event){
     const target = event.target;
     const value = target.value;
@@ -34,8 +42,10 @@ class PostProperty extends React.Component {
   }
 
   onFormSubmit(event){
+    console.log('clicked submit');
     event.preventDefault();
-    postProperty(this.state);
+    this.props.postProperty(this.state);
+
   }
 
   render(){
@@ -174,9 +184,15 @@ class PostProperty extends React.Component {
   }
 }
 
+function mapStateToProps(state){
+  return {
+    properties: state.properties
+  };
+}
+
 function mapDispatchToProps(dispatch){
   return bindActionCreators(
     {postProperty: postProperty}, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(PostProperty);
+export default connect(mapStateToProps, mapDispatchToProps)(PostProperty);
