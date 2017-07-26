@@ -1,5 +1,5 @@
 import React from "react";
-import {Row, Col, Container} from 'reactstrap';
+import {Button, Row, Col, Container} from 'reactstrap';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
@@ -26,52 +26,62 @@ class FullPropertyDisplay extends React.Component {
     });
   }
 
+  makeReservation = (event) => {
+    event.preventDefault()
+    axios.patch(`${API_URL}/properties/${this.props.match.params.id}`,
+    {bookedOnHalloween: true})
+    .then((data) => {
+      console.log(data);
+      this.setState({ property: data.data });
+    })
+  }
+
   render(){
     if(!this.state.property.id) {
       return <div> Loading...</div>
     }
 
     return (
-      <Container>
-        <Row>
+      <Container className="fullPropContainer">
+        <Row className="fullPropDetails">
           <Col xs="6">
-            <img src={this.state.property.photo_url} alt="a something should go here" height="200px"></img>
-          </Col>
-          <Col xs="6">
-            <h3>
-            {this.state.property.property_name}
-          </h3>
-          <div>
-            {this.state.property.description}
-          </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="4">
-            <h4>Address:</h4>
-            <div>{this.state.property.street_address}</div>
-            <div>{this.state.property.city}</div>
-            <div>{this.state.property.state}</div>
-            <div>{this.state.property.zip_code}</div>
-          </Col>
-          <Col xs="4">
-            <h4>Amenities:</h4>
-            <div>{this.state.property.amenities}</div>
-          </Col>
-          <Col xs="4">
-            <h4>House Rules:</h4>
-            <div>{this.state.property.house_rules}</div>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs="6">
-            <div className="calendarBox">
+            <div className="fullPropDesc">
+              <h3>
+                {this.state.property.property_name}
+              </h3>
+              <p>
+                {this.state.property.description}
+              </p>
             </div>
           </Col>
           <Col xs="6">
-            <div className="makeReservationBox">
-              Nightly Price: ${this.state.property.nightly_price}
+            <div className="fullPropImageDiv">
+              <img className="fullPropImage"src={this.state.property.photo_url} alt="a something should go here" height="200px"></img>
             </div>
+          </Col>
+        </Row>
+        <Row className="fullPropDetails">
+
+            <Col className="fullPropDetsCol" xs="4">
+              <h5>Address:</h5>
+              <div>{this.state.property.street_address}</div>
+              <div>{this.state.property.city}</div>
+              <div>{this.state.property.state}</div>
+              <div>{this.state.property.zip_code}</div>
+            </Col>
+            <Col className="fullPropDetsCol" xs="4">
+              <h5>Amenities:</h5>
+              <div>{this.state.property.amenities}</div>
+            </Col>
+            <Col className="fullPropDetsCol" xs="4">
+              <h5>House Rules:</h5>
+              <div>{this.state.property.house_rules}</div>
+            </Col>
+
+        </Row>
+        <Row>
+          <Col>
+            <Button className="reservationBtn" onClick={this.makeReservation}><span className="reservationBtnText">Reserve this room</span></Button>
           </Col>
         </Row>
       </Container>

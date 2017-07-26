@@ -6,6 +6,7 @@ import {bindActionCreators} from 'redux';
 import {selectProperty} from '../actions/index';
 import {getAllProperties} from '../actions/index';
 
+
 class ListAllProperties extends React.Component {
   componentDidMount() {
     this.props.getAllProperties();
@@ -16,6 +17,7 @@ class ListAllProperties extends React.Component {
       return <div>loading</div>
     }
     return this.props.properties.map((property, i)=>{
+      console.log(property);
       return (
         <PropertyCard
           key={i}

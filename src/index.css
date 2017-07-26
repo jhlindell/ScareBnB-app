@@ -171,32 +171,26 @@ body{
   margin-bottom: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-radius: 5px;
 }
 
 .fullPropDetsCol {
   padding-left: 20px;
 }
 
-.calendarBox {
-  min-height: 250px;
-  max-height: 250px;
-  background: rgba(38, 45, 56, 0.8);
-  color: #999b90;
+.reservationBtn {
+  background: rgba(226, 229, 213, 1.0) !important;
 }
 
-.makeReservationBox {
-  min-height: 250px;
-  max-height: 250px;
-  background: rgba(38, 45, 56, 0.8);
-  color: #999b90;
+.reservationBtn:hover {
+  background: rgba(226, 229, 213, 0.0) !important;
+  border: 2px solid rgba(226, 229, 213, 1.0);
 }
 
-::-webkit-scrollbar
-{
-    width: 0px;
+.reservationBtnText {
+  color: rgba(38, 45, 56, 1.0);
 }
-::-webkit-scrollbar-track-piece
-{
-    background-color: transparent;
-    -webkit-border-radius: 6px;
+
+.reservationBtnText:hover {
+  color: rgba(226, 229, 213, 1.0);
 }
