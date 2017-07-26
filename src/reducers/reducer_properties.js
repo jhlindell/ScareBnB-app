@@ -7,7 +7,9 @@ export default function(state = [], action){
 
     case 'POST_PROPERTY':
       {
-        console.log(action.payload.data, "from reducer");
+
+        return state.concat([action.payload.data]);
+
       }
 
     default:

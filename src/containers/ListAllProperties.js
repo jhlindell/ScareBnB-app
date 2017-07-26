@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from 'reactstrap';
-import PropertyCard from './propertyCard.js';
+import PropertyCard from '../components/propertyCard';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {selectProperty} from '../actions/index';
@@ -9,7 +9,6 @@ import {getAllProperties} from '../actions/index';
 class ListAllProperties extends React.Component {
   componentDidMount() {
     this.props.getAllProperties();
-    
   }
 
   renderList(){

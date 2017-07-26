@@ -1,52 +1,98 @@
 import React from "react";
+
 import {Row, Col, Container} from 'reactstrap';
 import {postProperty} from '../actions/index';
 
 
 class FullPropertyDisplay extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
+
   render(){
     return (
-      <Container>
-        <Row>
+      <Container className="fullPropContainer">
+        <Row className="fullPropDetails">
           <Col xs="6">
-            <img src={this.props.Property.photo_url} alt="a something should go here" height="200px"></img>
-          </Col>
-          <Col xs="6">
+          <div className="fullPropDesc">
             <h3>
-            {this.props.Property.property_name}
-          </h3>
-          <div>
-            {this.props.Property.description}
+              Haunted House
+            </h3>
+            <p>
+              This treehouse is next level haunted. This treehouse is probably the headquaters for Ghosts and demons to practice their latest scares.This treehouse is next level haunted. This treehouse is probably the headquaters for Ghosts and demons to practice their latest scares.This treehouse is next level haunted. This treehouse is probably the headquaters for Ghosts and demons to practice their latest scares.
+            </p>
           </div>
           </Col>
-        </Row>
-        <Row>
-          <Col xs="4">
-            <h4>Address:</h4>
-            <div>{this.props.Property.street_address}</div>
-            <div>{this.props.Property.city}</div>
-            <div>{this.props.Property.state}</div>
-            <div>{this.props.Property.zip_code}</div>
-          </Col>
-          <Col xs="4">
-            <h4>Amenities:</h4>
-            <div>{this.props.Property.amenities}</div>
-          </Col>
-          <Col xs="4">
-            <h4>House Rules:</h4>
-            <div>{this.props.Property.house_rules}</div>
-          </Col>
-        </Row>
-        <Row>
           <Col xs="6">
-            <div className="calendarBox">
+            <div className="fullPropImageDiv">
+              <img className="fullPropImage" src="http://lorempixel.com/400/200/" alt="a something should go here" height="200px"></img>
+            </div>
+          </Col>
+        </Row>
+        <Row className="fullPropDetails">
 
-            </div>
+            <Col className="fullPropDetsCol" xs="4">
+              <h5>Address:</h5>
+              <div>1000 Somwhere street</div>
+              <div>Randomtown</div>
+              <div>New State</div>
+              <div>10000</div>
+            </Col>
+            <Col className="fullPropDetsCol" xs="4">
+              <h5>Amenities:</h5>
+              <div>There is sleeping bag, and a bucket for showering There is sleeping bag, and a bucket for showering There is sleeping bag, and a bucket for showering</div>
+            </Col>
+            <Col className="fullPropDetsCol" xs="4">
+              <h5>House Rules:</h5>
+              <div>Don't wake the ghosts</div>
+            </Col>
+
+        </Row>
+        <Row>
+          <Col xs="6">
+            <Row>
+              <Col xs="1"></Col>
+              <Col xs="10">
+                <div className="calendarBox">
+                  Calendar will go in here
+                </div>
+              </Col>
+              <Col xs="1"></Col>
+            </Row>
           </Col>
           <Col xs="6">
-            <div className="makeReservationBox">
-              Nightly Price: ${this.props.Property.nightly_price}
-            </div>
+            <Row>
+              <Col xs="1"></Col>
+              <Col xs="10">
+                <div className="makeReservationBox">
+                  <div>Nightly Price: $45</div>
+                  <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                    <DropdownToggle caret>
+                      Dropdown
+                    </DropdownToggle>
+                    <DropdownMenu>
+                      <DropdownItem>Some Action</DropdownItem>
+                      <DropdownItem>Another Action</DropdownItem>
+                    </DropdownMenu>
+                  </Dropdown>
+                  <Button>Make reservation!</Button>
+                </div>
+              </Col>
+              <Col xs="1"></Col>
+            </Row>
           </Col>
         </Row>
 

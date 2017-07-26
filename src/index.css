@@ -6,15 +6,15 @@ dark gray -#262d38
 yello -#dbdb34
 orange - #eaac10
 
-font-family: 'Creepster', cursive;
+font-family: 'pster', cursive;
 */
 
-
-
+/*----------GENERAL------------------*/
 
 body{
   position: relative;
-  overflow: scroll;
+  /*overflow: auto;*/
+  padding-bottom: 50px;
 }
 
 .backgroundImage{
@@ -28,64 +28,66 @@ body{
   background-color: #0e004f;
 }
 
-
-.cardtitle{
-  max-height: 80px;
-  min-height: 80px;
-  text-align: center;
+.overflow{
+  overflow: scroll;
 }
 
-.makeReservationBox{
-  /*background-color: red;*/
-  border: 1px solid black;
-  height: 35vh;
-}
+/*----------NAV BAR------------------*/
 
-.calendarBox{
-  /*background-color: green;*/
-  height: 35vh;
-  border: 1px solid black;
-}
-
-.hauntPropBox {
-  padding: 10px;
+.navItem {
   border-radius: 5px;
-  border: 1px solid black;
-  margin-bottom: 20px;
-  background-color: yellow;
+  border: 1px solid rgba(153, 155, 144, 0.3) !important;
 }
 
-.PropertyCardFade{
-  /*background-color: black;*/
+.navItem:hover {
+  box-shadow: 0 0 5px #6b6862;
 }
+
+.scaryText {
+  font-family: 'Creepster', cursive;
+}
+.navBarFixed{
+  background: rgba(38, 45, 56, 0.0) !important;
+  position: absolute;
+}
+.navBarText {
+  color: #999b90 !important;
+}
+
+/*----------PROPERTY CARDS------------------*/
+
+.ListAllProperties{
+  margin-top: 50px;
+  overflow: auto;
+}
+
 .card{
   margin-top: 30px;
   min-height: 450px;
   max-height: 450px;
-
   background: rgba(38, 45, 56, 0.7) !important;
   color: #e2e5d5;
-
 }
-.card:hover{
 
+.card:hover{
   box-shadow: 0 0 15px #6b6862;
 }
 
-.overflow{
-  overflow: scroll;
+.cardtitle {
+  max-height: 80px;
+  min-height: 80px;
+  text-align: center;
 }
 
 .cardButton{
   margin: 10px;
   margin-top: 20px;
   background: #131414 !important;
-  /*vertical-align: middle;*/
 }
 .cardButton:hover{
   border: 4px solid #ccab41;
-  box-shadow: 0 0 10px white;
-  color:#d3d68d;
+  box-shadow: 0 0 5px #ccab41;
+  /*color:#d3d68d;*/
 }
 .cardButtonText{
   margin-bottom: 40px;
@@ -95,20 +97,98 @@ body{
   color: #ccab41;
 }
 
-.scaryText {
-  font-family: 'Creepster', cursive;
-}
-.navBarFixed{
-  /*background-color: #5b5b58 !important;*/
-  background: rgba(38, 45, 56, 0.0) !important;
-  position: absolute;
-}
-.navBarText {
-  color: #999b90 !important;
+/*----------POST PROPERTY------------------*/
+
+.hauntPropBox {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  background: rgba(38, 45, 56, 0.7) !important;
+  color: #e2e5d5;
 }
 
-.ListAllProperties{
+.propertyFormInput {
+  background: rgba(226, 229, 213, 1.0) !important;
+}
+
+.formDescription {
+  color: #e2e5d5;
+}
+
+.postPropertyForm{
   margin-top: 50px;
+}
+
+.postPropertySubmit {
+  background: rgba(226, 229, 213, 1.0) !important;
+  margin-bottom: 50px;
+}
+
+.postPropertySubmit:hover {
+  background: rgba(226, 229, 213, 0.0) !important;
+  border: 2px solid rgba(226, 229, 213, 1.0);
+  margin-bottom: 50px;
+}
+
+.propSubmitBtnText:hover{
+  color: rgba(226, 229, 213, 1.0);
+}
+
+.propSubmitBtnText{
+  color: rgba(38, 45, 56, 1.0);
+}
+
+/*----------FULL PROPERTY------------------*/
+
+.fullPropContainer {
+  margin-top: 100px;
+}
+
+/*.fullPropDesc {
+  background: rgba(38, 45, 56, 0.8);
+  color: #999b90;
+  padding-: 20px;
+}*/
+
+
+.fullPropImage {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.fullPropImageDiv {
+  margin-left: auto;
+  min-width: 80%;
+  max-width: 80%;
+  border: 5px solid rgba(38, 45, 56, 0.7);
+}
+
+.fullPropDetails {
+  background: rgba(38, 45, 56, 0.8);
+  color: #999b90;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.fullPropDetsCol {
+  padding-left: 20px;
+}
+
+.calendarBox {
+  min-height: 250px;
+  max-height: 250px;
+  background: rgba(38, 45, 56, 0.8);
+  color: #999b90;
+}
+
+.makeReservationBox {
+  min-height: 250px;
+  max-height: 250px;
+  background: rgba(38, 45, 56, 0.8);
+  color: #999b90;
 }
 
 ::-webkit-scrollbar
