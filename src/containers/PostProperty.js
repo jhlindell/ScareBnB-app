@@ -46,7 +46,6 @@ class PostProperty extends React.Component {
   onFormSubmit(event){
     event.preventDefault();
     this.props.postProperty(this.state);
-
   }
 
   render(){

@@ -1,4 +1,6 @@
 import axios from 'axios';
+const LOCAL_URL = 'http://localhost:8080/api/properties';
+const HEROKU_URL = 'https://scarebnb-db.herokuapp.com';
 
 export function selectProperty(property) {
   return {
@@ -8,9 +10,9 @@ export function selectProperty(property) {
 }
 
 export function postProperty(property) {
-  const url = 'http://localhost:8080/api/properties'
+  const url = HEROKU_URL;
   const request = axios.post(url, property);
-  console.log('post action sent');
+
   return {
     type: 'POST_PROPERTY',
     payload: request
@@ -18,7 +20,7 @@ export function postProperty(property) {
 }
 
 export function getAllProperties(){
-  const url = 'http://localhost:8080/api/properties'
+  const url = HEROKU_URL;
   const request = axios.get(url);
 
   return {
