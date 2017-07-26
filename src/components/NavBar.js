@@ -13,7 +13,7 @@ class NavBar extends React.Component {
           <Collapse navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="navItem">
-                <Link to="/postproperty">Post a room</Link>
+                <Link to="/postproperty" className="navBarText">Post a room</Link>
               </NavItem>
             </Nav>
           </Collapse>

@@ -33,20 +33,19 @@ class FullPropertyDisplay extends React.Component {
             this.setState({property: property.data[0]});
             axios.get(`${API_URL}/users/${this.state.property.owner_id}`).then((user) => {
                 this.setState({owner: user.data[0]});
-                console.log(this.state);
             });
         });
     }
 
     makeReservation = (event) => {
         if (this.state.property.bookedOnHalloween) {
-            console.log("already booked");
-            console.log(toast('This room has already been booked'));
+            // console.log("already booked");
+            toast('This room has already been booked');
             return
         }
         event.preventDefault()
         axios.patch(`${API_URL}/properties/${this.props.match.params.id}`, {bookedOnHalloween: true}).then((data) => {
-            console.log(data);
+            // console.log(data);
             this.setState({property: data.data});
         })
     }

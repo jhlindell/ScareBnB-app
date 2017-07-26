@@ -10,7 +10,6 @@ import {getAllProperties} from '../actions/index';
 class ListAllProperties extends React.Component {
   constructor(props){
     super(props);
-    // this.onFormSubmit = this.onFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -26,9 +25,7 @@ class ListAllProperties extends React.Component {
   componentDidMount() {
     this.props.getAllProperties();
   }
-  // componentWillReceiveProps(nextProps) {
-  //   this.props.getAllProperties();
-  // }
+
   renderList(){
     if(!this.props.properties){
       return <div>loading</div>

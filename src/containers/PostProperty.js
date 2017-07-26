@@ -25,12 +25,8 @@ class PostProperty extends React.Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
-  componentDidMount(){
-    console.log(this.props);
-  }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props);
     const { history, properties } = this.props;
 
     if (nextProps.properties.length > properties.length) {
@@ -50,14 +46,9 @@ class PostProperty extends React.Component {
   onFormSubmit(event){
     event.preventDefault();
     this.props.postProperty(this.state);
-    // this.setState({
-    //   submitted: true
-    // });
+
   }
 
-  // if (this.state.submitted) {
-  //   return <Redirect to="/"/>
-  // }
   render(){
     return (
       <Container className="postPropertyForm">
