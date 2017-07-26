@@ -21,6 +21,7 @@ class App extends Component {
           <Route path="/"  component={()=> <Background />} />
           <Route exact path="/" component={() => <ListAllProperties />} />
           <Route path="/postproperty" component={() => <PostProperty />} />
+          <Route path="/property/"  component={()=> <FullPropertyDisplay />} />
         </div>
       </Router>
     )

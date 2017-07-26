@@ -1,5 +1,7 @@
 import React from "react";
 import {Row, Col, Container} from 'reactstrap';
+import {postProperty} from '../actions/index';
+
 
 class FullPropertyDisplay extends React.Component {
   render(){

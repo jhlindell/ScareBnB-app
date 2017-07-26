@@ -35,7 +35,9 @@ class PostProperty extends React.Component {
 
   onFormSubmit(event){
     event.preventDefault();
-    postProperty(this.state);
+    var result = postProperty(this.state);
+    console.log(result, "from post property");
+
   }
 
   render(){
