@@ -50,9 +50,12 @@ class PostProperty extends React.Component {
   onFormSubmit(event){
     event.preventDefault();
     this.props.postProperty(this.state);
+<<<<<<< HEAD
     // this.setState({
     //   submitted: true
     // });
+=======
+>>>>>>> f20eca260c06f8bc292280eada38dfed98cbaecd
   }
 
   // if (this.state.submitted) {

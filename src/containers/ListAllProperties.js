@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Input, Label,Row, Col, Form, FormGroup } from 'reactstrap';
 import PropertyCard from '../components/propertyCard';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -8,6 +8,21 @@ import {getAllProperties} from '../actions/index';
 
 
 class ListAllProperties extends React.Component {
+  constructor(props){
+    super(props);
+    // this.onFormSubmit = this.onFormSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event){
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({
+      [name]: value
+    });
+  }
+
   componentDidMount() {
     this.props.getAllProperties();
   }
@@ -31,17 +46,27 @@ class ListAllProperties extends React.Component {
 
   render(){
     return (
-      <Container className="ListAllProperties">
-        <Row>
+
+      <Container-fluid className="ListAllProperties">
+          <Row className="cardHolder">
+            <div className="filterBox">
+              <Form>
+                 <FormGroup>
+                   <Label for="exampleEmail">Email</Label>
+                   <Input type="email" name="email" id="exampleEmail" onChange={(e) => {this.handleInputChange(e)}} placeholder="with a placeholder" />
+                 </FormGroup>
+              </Form>
+            </div>
           <Col xs='2'>
           </Col>
-          <Col xs='10'>
+          <Col xs='9'>
             <Row>
               {this.renderList()}
             </Row>
           </Col>
         </Row>
-      </Container>
+      </Container-fluid>
+
     )
   }
 }

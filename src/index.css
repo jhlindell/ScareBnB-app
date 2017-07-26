@@ -32,6 +32,21 @@ body{
   overflow: scroll;
 }
 
+.filterBox {
+  position: absolute;
+  min-width: 150px;
+  min-height: 450px;
+  left: 0px;
+  margin-top: 30px;
+  background: rgba(38, 45, 56, 0.7);
+  border-radius: 5px;
+  color: #e2e5d5;
+}
+
+.cardHolder {
+  margin-top: 50px;
+}
+
 /*----------NAV BAR------------------*/
 
 .navItem {
@@ -57,7 +72,7 @@ body{
 /*----------PROPERTY CARDS------------------*/
 
 .ListAllProperties{
-  margin-top: 50px;
+  margin-top: 20% !important;
   overflow: auto;
 }
 
@@ -95,6 +110,27 @@ body{
 }
 .cardButtonText:hover{
   color: #ccab41;
+}
+
+.reservedStamp {
+  position: absolute;
+  font-family: sans-serif;
+  color: #6d1200;
+  border: 1px solid #6d1200;
+  transform: rotate(-10deg);
+  margin-top: 49%;
+  margin-left: 5%;
+  font-size: 160%;
+  text-align: center;
+  border-radius: 5px;
+  width: 90%;
+}
+
+.cardImage {
+}
+
+.none {
+  display: none;
 }
 
 /*----------POST PROPERTY------------------*/
