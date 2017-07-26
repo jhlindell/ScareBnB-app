@@ -3,6 +3,10 @@ import { Card,CardText, CardBlock,
   CardTitle, Col, Button } from 'reactstrap';
 
 class PropertyCard extends React.Component {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 76761b530c598af70daa8ec1c229d06e6782ee09
   render(){
     return (
       <Col xs="12" sm="6" md="4" className="PropertyCardFade">
