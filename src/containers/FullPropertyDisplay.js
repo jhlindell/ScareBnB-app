@@ -10,14 +10,20 @@ class FullPropertyDisplay extends React.Component {
     super(props);
     this.state = {
       property: {},
+      owner: {}
     };
   }
 
   componentDidMount(){
     axios.get(`${API_URL}/properties/${this.props.match.params.id}`)
-    .then((data) => {
-      this.setState({ property: data.data[0] });
-    })
+    .then((property) => {
+      this.setState({ property: property.data[0] });
+      axios.get(`${API_URL}/users/${this.state.property.owner_id}`)
+      .then((user) => {
+        this.setState({ owner: user.data[0]});
+        console.log(this.state);
+      });
+    });
   }
 
   makeReservation = (event) => {
