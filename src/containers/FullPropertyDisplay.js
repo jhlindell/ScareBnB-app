@@ -1,5 +1,5 @@
 import React from "react";
-import {Row, Col, Container} from 'reactstrap';
+import {Button, Row, Col, Container} from 'reactstrap';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
@@ -10,13 +10,29 @@ class FullPropertyDisplay extends React.Component {
     super(props);
     this.state = {
       property: {},
+      owner: {}
     };
   }
 
   componentDidMount(){
     axios.get(`${API_URL}/properties/${this.props.match.params.id}`)
+    .then((property) => {
+      this.setState({ property: property.data[0] });
+      axios.get(`${API_URL}/users/${this.state.property.owner_id}`)
+      .then((user) => {
+        this.setState({ owner: user.data[0]});
+        console.log(this.state);
+      });
+    });
+  }
+
+  makeReservation = (event) => {
+    event.preventDefault()
+    axios.patch(`${API_URL}/properties/${this.props.match.params.id}`,
+    {bookedOnHalloween: true})
     .then((data) => {
-      this.setState({ property: data.data[0] });
+      console.log(data);
+      this.setState({ property: data.data });
     })
   }
 
@@ -64,14 +80,8 @@ class FullPropertyDisplay extends React.Component {
 
         </Row>
         <Row>
-          <Col xs="6">
-            <div className="calendarBox">
-            </div>
-          </Col>
-          <Col xs="6">
-            <div className="makeReservationBox">
-              Nightly Price: ${this.state.property.nightly_price}
-            </div>
+          <Col>
+            <Button className="reservationBtn" onClick={this.makeReservation}><span className="reservationBtnText">Reserve this room</span></Button>
           </Col>
         </Row>
       </Container>
