@@ -1,5 +1,5 @@
 import React from "react";
-import {Row, Col, Container} from 'reactstrap';
+import {Button, Row, Col, Container} from 'reactstrap';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
@@ -64,14 +64,8 @@ class FullPropertyDisplay extends React.Component {
 
         </Row>
         <Row>
-          <Col xs="6">
-            <div className="calendarBox">
-            </div>
-          </Col>
-          <Col xs="6">
-            <div className="makeReservationBox">
-              Nightly Price: ${this.state.property.nightly_price}
-            </div>
+          <Col>
+            <Button className="reservationBtn"><span className="reservationBtnText">Reserve this room</span></Button>
           </Col>
         </Row>
       </Container>
