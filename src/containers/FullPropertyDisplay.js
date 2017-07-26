@@ -9,13 +9,26 @@ import 'react-toastify/dist/ReactToastify.min.css';
 const API_URL = 'http://localhost:8080/api'
 
 class FullPropertyDisplay extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            property: {},
-            owner: {}
-        };
-    }
+
+  constructor(props){
+    super(props);
+    this.state = {
+      property: {},
+      owner: {}
+    };
+  }
+
+  componentDidMount(){
+    axios.get(`${API_URL}/properties/${this.props.match.params.id}`)
+    .then((property) => {
+      this.setState({ property: property.data[0] });
+      axios.get(`${API_URL}/users/${this.state.property.owner_id}`)
+      .then((user) => {
+        this.setState({ owner: user.data[0]});
+      });
+    });
+  }
+
 
     componentDidMount() {
         axios.get(`${API_URL}/properties/${this.props.match.params.id}`).then((property) => {
@@ -102,4 +115,5 @@ function mapStateToProps(state) {
     return {properties: state.properties}
 }
 
-export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));
+// export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));
+export default FullPropertyDisplay
