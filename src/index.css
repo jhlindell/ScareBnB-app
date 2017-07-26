@@ -190,3 +190,9 @@ body{
   background: rgba(38, 45, 56, 0.8);
   color: #999b90;
 }
+
+/*----------USER PROFILE------------------*/
+
+.profileForm {
+  margin-top: 70px;
+}
