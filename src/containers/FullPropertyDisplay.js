@@ -20,6 +20,16 @@ class FullPropertyDisplay extends React.Component {
     })
   }
 
+  makeReservation = (event) => {
+    event.preventDefault()
+    axios.patch(`${API_URL}/properties/${this.props.match.params.id}`,
+    {bookedOnHalloween: true})
+    .then((data) => {
+      console.log(data);
+      this.setState({ property: data.data });
+    })
+  }
+
   render(){
     if(!this.state.property.id) {
       return <div> Loading...</div>
@@ -65,7 +75,7 @@ class FullPropertyDisplay extends React.Component {
         </Row>
         <Row>
           <Col>
-            <Button className="reservationBtn"><span className="reservationBtnText">Reserve this room</span></Button>
+            <Button className="reservationBtn" onClick={this.makeReservation}><span className="reservationBtnText">Reserve this room</span></Button>
           </Col>
         </Row>
       </Container>
