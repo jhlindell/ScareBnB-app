@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.min.css';
 const API_URL = 'http://localhost:8080/api'
 
 class FullPropertyDisplay extends React.Component {
-<<<<<<< HEAD
   constructor(props){
     super(props);
     this.state = {
@@ -28,15 +27,6 @@ class FullPropertyDisplay extends React.Component {
       });
     });
   }
-=======
-    constructor(props) {
-        super(props);
-        this.state = {
-            property: {},
-            owner: {}
-        };
-    }
->>>>>>> f20eca260c06f8bc292280eada38dfed98cbaecd
 
     componentDidMount() {
         axios.get(`${API_URL}/properties/${this.props.match.params.id}`).then((property) => {
