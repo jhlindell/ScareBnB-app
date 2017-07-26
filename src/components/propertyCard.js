@@ -1,7 +1,7 @@
 import React from "react";
 import { Card,CardText, CardBlock,
   CardTitle, Col, Button } from 'reactstrap';
-import {Redirect} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class PropertyCard extends React.Component {
 
@@ -20,17 +20,17 @@ class PropertyCard extends React.Component {
             {this.props.property.description}
           </CardText>
         </CardBlock>
-        <Button className="cardButton" >
-
-          <span className="cardButtonText">
-            View more
-          </span>
-        </Button>
+        <Link to={`/property/${this.props.property.id}`}>
+          <Button className="cardButton">
+            <span className="cardButtonText">
+              More Info
+            </span>
+          </Button>
+        </Link>
       </Card>
     </Col>
     )
   }
 }
-{/* <Redirect to={`/properties/${this.props.property.id}`} /> */}
 
 export default PropertyCard;
