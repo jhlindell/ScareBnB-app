@@ -21,7 +21,6 @@ class FullPropertyDisplay extends React.Component {
       axios.get(`${API_URL}/users/${this.state.property.owner_id}`)
       .then((user) => {
         this.setState({ owner: user.data[0]});
-        console.log(this.state);
       });
     });
   }
@@ -96,4 +95,5 @@ function mapStateToProps(state) {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));
+// export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));
+export default FullPropertyDisplay

@@ -1,12 +1,14 @@
 import React from "react";
 import { Card,CardText, CardBlock,
   CardTitle, Col, Button } from 'reactstrap';
+import {Redirect} from 'react-router-dom';
 
 class PropertyCard extends React.Component {
+
   render(){
     return (
       <Col xs="12" sm="6" md="4" className="PropertyCardFade">
-        <Card className="card" onClick={() =>   {this.props.selectProperty(this.props.property)}}>
+        <Card className="card">
         <CardBlock className="cardtitle">
           <CardTitle className="scaryText">
             {this.props.property.property_name}
@@ -18,7 +20,8 @@ class PropertyCard extends React.Component {
             {this.props.property.description}
           </CardText>
         </CardBlock>
-        <Button className="cardButton">
+        <Button className="cardButton" >
+
           <span className="cardButtonText">
             View more
           </span>
@@ -28,5 +31,6 @@ class PropertyCard extends React.Component {
     )
   }
 }
+{/* <Redirect to={`/properties/${this.props.property.id}`} /> */}
 
 export default PropertyCard;

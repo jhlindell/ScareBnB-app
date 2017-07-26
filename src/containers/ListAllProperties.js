@@ -11,13 +11,14 @@ class ListAllProperties extends React.Component {
   componentDidMount() {
     this.props.getAllProperties();
   }
-
+  // componentWillReceiveProps(nextProps) {
+  //   this.props.getAllProperties();
+  // }
   renderList(){
     if(!this.props.properties){
       return <div>loading</div>
     }
     return this.props.properties.map((property, i)=>{
-      console.log(property);
       return (
         <PropertyCard
           key={i}
