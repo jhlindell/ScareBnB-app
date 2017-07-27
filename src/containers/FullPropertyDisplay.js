@@ -1,7 +1,5 @@
 import React from "react";
 import {Button, Row, Col, Container} from 'reactstrap';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -101,9 +99,4 @@ class FullPropertyDisplay extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {properties: state.properties}
-}
-
-// export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));
 export default FullPropertyDisplay

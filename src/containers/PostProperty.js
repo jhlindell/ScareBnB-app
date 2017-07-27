@@ -3,7 +3,6 @@ import { Button, Col, Container, Form, FormGroup, Label, Input} from 'reactstrap
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {postProperty} from '../actions/index';
-import {Redirect} from 'react-router-dom';
 
 class PostProperty extends React.Component {
   constructor(props){

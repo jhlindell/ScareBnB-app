@@ -60,6 +60,7 @@ body{
 
 .scaryText {
   font-family: 'Creepster', cursive;
+
 }
 .navBarFixed{
   background: rgba(38, 45, 56, 0.0) !important;
@@ -67,6 +68,20 @@ body{
 }
 .navBarText {
   color: #999b90 !important;
+  font-size: 40px !important;
+}
+
+.navBarButton {
+  color: #999b90 !important;
+  font-size: 25px;
+}
+
+.navBarButton:hover {
+  text-decoration: none;
+}
+
+.cardHolder {
+  margin-top: 80px;
 }
 
 /*----------PROPERTY CARDS------------------*/
@@ -239,4 +254,13 @@ body{
 {
     background-color: transparent;
     -webkit-border-radius: 6px;
+}
+
+#dollhead, #dollbody {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#dollbody {
+  margin-top: -60px;
 }
