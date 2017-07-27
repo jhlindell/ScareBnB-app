@@ -6,9 +6,9 @@ import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-const API_URL = 'http://localhost:8080/api';
+const LOCAL_URL = 'http://localhost:8080/api';
 const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
-const URL = HEROKU_URL;
+const URL = LOCAL_URL;
 
 class FullPropertyDisplay extends React.Component {
   constructor(props) {
