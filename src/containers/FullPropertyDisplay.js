@@ -20,9 +20,11 @@ class FullPropertyDisplay extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${URL}/properties/${this.props.match.params.id}`).then((property) => {
+    axios.get(`${URL}/properties/${this.props.match.params.id}`)
+    .then((property) => {
       this.setState({property: property.data[0]});
-      axios.get(`${URL}/users/${this.state.property.owner_id}`).then((user) => {
+      axios.get(`${URL}/users/${this.state.property.owner_id}`)
+      .then((user) => {
         this.setState({owner: user.data[0]});
       });
     });
