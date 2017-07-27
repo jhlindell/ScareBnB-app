@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 const API_URL = 'http://localhost:8080/api';
 const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
+const URL = HEROKU_URL;
 
 class FullPropertyDisplay extends React.Component {
   constructor(props) {
@@ -19,9 +20,9 @@ class FullPropertyDisplay extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${HEROKU_URL}/properties/${this.props.match.params.id}`).then((property) => {
+    axios.get(`${URL}/properties/${this.props.match.params.id}`).then((property) => {
       this.setState({property: property.data[0]});
-      axios.get(`${HEROKU_URL}/users/${this.state.property.owner_id}`).then((user) => {
+      axios.get(`${URL}/users/${this.state.property.owner_id}`).then((user) => {
         this.setState({owner: user.data[0]});
       });
     });
@@ -34,7 +35,7 @@ class FullPropertyDisplay extends React.Component {
       return
     }
     event.preventDefault()
-    axios.patch(`${API_URL}/properties/${this.props.match.params.id}`, {bookedOnHalloween: true}).then((data) => {
+    axios.patch(`${URL}/properties/${this.props.match.params.id}`, {bookedOnHalloween: true}).then((data) => {
       // console.log(data);
       this.setState({property: data.data});
     })
