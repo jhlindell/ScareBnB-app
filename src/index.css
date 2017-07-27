@@ -254,6 +254,7 @@ body{
   min-height: 100vh;
   max-height: 100vh;
   color: #e2e5d5;
+  opacity: 0;
   font-family: 'Old Standard TT', serif;
 }
 
@@ -372,7 +373,7 @@ bottom: 0;
 overflow: hidden;
 -webkit-filter: contrast(34);
 background: #000;
-z-index: 100;
+z-index: -100;
 }
 
 .dripwrapper {
@@ -386,7 +387,17 @@ height: 100%;
 
 
 
+#bloodtext{
+  width:165px;
+  height:37px;
+  background-color: #a51409;
+  position: absolute;
+  top:67vh;
+  z-index:100;
+  left: 70vw;
+  margin-left: -80px;
 
+}
 
 .dripper{
   box-sizing: border-box;
