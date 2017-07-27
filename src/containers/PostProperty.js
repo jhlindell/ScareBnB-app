@@ -29,7 +29,7 @@ class PostProperty extends React.Component {
     const { history, properties } = this.props;
 
     if (nextProps.properties.length > properties.length) {
-      history.push('property/' + (properties[properties.length -1].id +1))
+      history.push('property/' + (nextProps.properties[(nextProps.properties.length-1)].id))
     }
   }
 
@@ -166,7 +166,7 @@ class PostProperty extends React.Component {
                   <Col xs={2}>
                     <Input
                       className="propertyFormInput"
-                      type="text"
+                      type="number"
                       onChange={(e) => {this.handleInputChange(e)}}
                       value={this.state.zip_code}
                       name="zip_code" />

@@ -85,6 +85,14 @@ class FullPropertyDisplay extends React.Component {
           </Col>
 
         </Row>
+        <Row className="fullPropDetails">
+          <Col className="fullPropDetsCol" xs="1">
+            <h5 className="propTextColor">When:</h5>
+          </Col>
+          <Col className="fullPropDetsCol" xs="4">
+            <div className="propTextColor">Halloween, 2017</div>
+          </Col>
+        </Row>
         <Row>
           <Col>
             <ToastContainer/>

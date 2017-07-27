@@ -15,7 +15,7 @@ class PropertyCard extends React.Component {
           </CardTitle>
         </CardBlock>
         <div className={`${this.props.property.bookedOnHalloween?  'reservedStamp' : 'none'}`}>Reserved!</div>
-        <img width="100%" className="cardImage" src={this.props.property.photo_url} alt="a something should go here" />
+        <img className="cardImage" src={this.props.property.photo_url} alt="a something should go here" />
         <CardBlock className="overflow" >
           <CardText >
             {this.props.property.description}

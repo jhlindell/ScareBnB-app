@@ -142,6 +142,7 @@ body{
 }
 
 .cardImage {
+  width:100%;
 }
 
 .none {
@@ -263,4 +264,8 @@ body{
 
 #dollbody {
   margin-top: -60px;
+}
+
+.propTextColor {
+  color: #999b90;
 }
