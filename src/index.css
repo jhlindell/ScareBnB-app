@@ -244,6 +244,101 @@ body{
 /*----------------LANDING PAGE-----------------*/
 
 .landingPageContainer {
-  background: #141619;
-  z-index: 2;
+  position: relative;
+  background-color: #191c21;
+  min-height: 100vh;
+  max-height: 100vh;
+  color: #e2e5d5;
+  font-family: 'Old Standard TT', serif;
+}
+
+.firstSentnace{
+  position: absolute;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 15%;
+}
+
+.fadeSentance {
+  animation-duration: 5s;
+  animation-name: fadeSentance;
+}
+
+@keyframes fadeSentance{
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+#living {
+  animation-duration: 5s;
+  animation-name: living;
+  opacity: 0;
+}
+
+@keyframes living {
+  0% {opacity: 0}
+  50% {opacity: 1}
+  100% {opacity: 0}
+}
+
+
+#dying {
+  position: absolute;
+  margin-top: -3.9%;
+  margin-left: 61.8%;
+  animation-duration: 7s;
+  animation-name: dying;
+  color: #a51409;
+}
+
+@keyframes dying{
+  0% {opacity: 0}
+  50% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.secondSentance {
+  position: absolute;
+  margin-left: 20%;
+  width: 56%;
+  margin-top: 22%;
+  animation-name: secondSentance;
+  animation-duration: 8s;
+}
+
+@keyframes secondSentance{
+  0% {opacity: 0}
+  70% {opacity: 0}
+  100% {opacity: 1}
+}
+
+.goToScarebnb {
+  position: absolute;
+  margin-top: 35%;
+  width: 15%;
+  margin-left: 60%;
+}
+
+
+.continueBtn {
+  background-color: #a51409 !important;
+  animation-name: continueBtn;
+  animation-duration: 10s;
+}
+
+.continueBtn:hover {
+  background-color: #e2e5d5 !important;
+  animation-name: continueBtn;
+  animation-duration: 10s;
+  color: black !important;
+}
+
+.continueText {
+  color:#e2e5d5;
+}
+
+@keyframes continueBtn {
+  0% {opacity: 0}
+  70% {opacity: 0}
+  100% {opacity: 1}
 }
