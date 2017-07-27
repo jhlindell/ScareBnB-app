@@ -21,7 +21,7 @@ class PropertyCard extends React.Component {
             {this.props.property.description}
           </CardText>
         </CardBlock>
-        <Link to={`/property/${this.props.property.id}`}>
+        <Link to={`/bg/property/${this.props.property.id}`}>
           <Button className="cardButton">
             <span className="cardButtonText">
               More Info

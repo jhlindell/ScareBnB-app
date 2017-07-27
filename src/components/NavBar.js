@@ -9,11 +9,11 @@ class NavBar extends React.Component {
       <div>
         <Navbar color="faded" light toggleable className="fixed-top navBarFixed">
           <NavbarToggler right/>
-          <NavbarBrand href="/" className="navBarText"><span className="scaryText">scare</span> BnB</NavbarBrand>
+          <NavbarBrand href="/bg/listallproperties" className="navBarText"><span className="scaryText">scare</span> BnB</NavbarBrand>
           <Collapse navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="navItem">
-                <Link to="/postproperty" className="navBarText">Post a room</Link>
+                <Link to="/bg/postproperty" className="navBarText">Post a room</Link>
               </NavItem>
             </Nav>
           </Collapse>
