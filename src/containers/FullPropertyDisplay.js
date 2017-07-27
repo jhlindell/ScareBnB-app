@@ -41,6 +41,9 @@ class FullPropertyDisplay extends React.Component {
     }
 
     makeReservation = (event) => {
+      console.log(this.state.owner.email, "email");
+      window.location.href = `mailto:${this.state.owner.email}?subject=${"Interested in booking a reservation"}&body=`;
+
         if (this.state.property.bookedOnHalloween) {
             console.log("already booked");
             console.log(toast('This room has already been booked'));

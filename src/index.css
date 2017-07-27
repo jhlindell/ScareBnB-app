@@ -215,3 +215,8 @@ body{
 .reservationBtnText:hover {
   color: rgba(226, 229, 213, 1.0);
 }
+
+/*  */
+.toastify{
+  margin-top: 80vh;
+}
