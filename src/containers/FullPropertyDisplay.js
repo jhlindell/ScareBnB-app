@@ -46,6 +46,7 @@ class FullPropertyDisplay extends React.Component {
             console.log(data);
             this.setState({property: data.data});
         })
+      }
 
   render() {
     if (!this.state.property.id) {
@@ -104,6 +105,7 @@ class FullPropertyDisplay extends React.Component {
     )
   }
 }
+
 
 function mapStateToProps(state) {
   return {properties: state.properties}
