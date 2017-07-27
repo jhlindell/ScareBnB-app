@@ -20,20 +20,19 @@ class PostProperty extends React.Component {
       city: '',
       state: '',
       zip_code: '',
-      bookedOnHalloween: false,
-      submitted: false
+      bookedOnHalloween: false
     };
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   const { history, properties } = this.props;
-  //
-  //   if (nextProps.properties.length > properties.length) {
-  //     history.push('property/' + properties[properties.length - 1].id)
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    const { history, properties } = this.props;
+
+    if (nextProps.properties.length > properties.length) {
+      history.push('property/' + (properties[properties.length -1].id +1))
+    }
+  }
 
   handleInputChange(event){
     const target = event.target;
@@ -45,19 +44,11 @@ class PostProperty extends React.Component {
   }
 
   onFormSubmit(event){
-    console.log(this.props);
     event.preventDefault();
     this.props.postProperty(this.state);
-    this.setState({
-      submitted: true
-    });
-    console.log(this.props);
   }
 
   render(){
-    if (this.state.submitted) {
-      return <Redirect to="/"/>
-    }
     return (
       <Container className="postPropertyForm">
         <Col xs={{size: 10, offset:1 }}>

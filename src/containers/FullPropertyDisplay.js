@@ -6,11 +6,13 @@ import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-const API_URL = 'http://localhost:8080/api'
+const API_URL = 'http://localhost:8080/api';
+const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
+const URL = HEROKU_URL;
 
 class FullPropertyDisplay extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       property: {},
@@ -18,27 +20,17 @@ class FullPropertyDisplay extends React.Component {
     };
   }
 
-  componentDidMount(){
-    axios.get(`${API_URL}/properties/${this.props.match.params.id}`)
+  componentDidMount() {
+    axios.get(`${URL}/properties/${this.props.match.params.id}`)
     .then((property) => {
-      this.setState({ property: property.data[0] });
-      axios.get(`${API_URL}/users/${this.state.property.owner_id}`)
+      this.setState({property: property.data[0]});
+      axios.get(`${URL}/users/${this.state.property.owner_id}`)
       .then((user) => {
-        this.setState({ owner: user.data[0]});
+        this.setState({owner: user.data[0]});
       });
     });
   }
 
-
-    componentDidMount() {
-        axios.get(`${API_URL}/properties/${this.props.match.params.id}`).then((property) => {
-            this.setState({property: property.data[0]});
-            axios.get(`${API_URL}/users/${this.state.property.owner_id}`).then((user) => {
-                this.setState({owner: user.data[0]});
-                console.log(this.state);
-            });
-        });
-    }
 
     makeReservation = (event) => {
       console.log(this.state.owner.email, "email");
@@ -54,68 +46,67 @@ class FullPropertyDisplay extends React.Component {
             console.log(data);
             this.setState({property: data.data});
         })
+
+  render() {
+    if (!this.state.property.id) {
+      return <div>
+        Loading...</div>
     }
 
-    render() {
-        if (!this.state.property.id) {
-            return <div>
-                Loading...</div>
-        }
+    return (
+      <Container className="fullPropContainer">
+        <Row className="fullPropDetails">
+          <Col xs="6">
+            <div className="fullPropDesc">
+              <h3>
+                {this.state.property.property_name}
+              </h3>
+              <p>
+                {this.state.property.description}
+              </p>
+            </div>
+          </Col>
+          <Col xs="6">
+            <div className="fullPropImageDiv">
+              <img className="fullPropImage" src={this.state.property.photo_url} alt="a something should go here" height="200px"></img>
+            </div>
+          </Col>
+        </Row>
+        <Row className="fullPropDetails">
 
-        return (
-            <Container className="fullPropContainer">
-                <Row className="fullPropDetails">
-                    <Col xs="6">
-                        <div className="fullPropDesc">
-                            <h3>
-                                {this.state.property.property_name}
-                            </h3>
-                            <p>
-                                {this.state.property.description}
-                            </p>
-                        </div>
-                    </Col>
-                    <Col xs="6">
-                        <div className="fullPropImageDiv">
-                            <img className="fullPropImage" src={this.state.property.photo_url} alt="a something should go here" height="200px"></img>
-                        </div>
-                    </Col>
-                </Row>
-                <Row className="fullPropDetails">
+          <Col className="fullPropDetsCol" xs="4">
+            <h5>Address:</h5>
+            <div>{this.state.property.street_address}</div>
+            <div>{this.state.property.city}</div>
+            <div>{this.state.property.state}</div>
+            <div>{this.state.property.zip_code}</div>
+          </Col>
+          <Col className="fullPropDetsCol" xs="4">
+            <h5>Amenities:</h5>
+            <div>{this.state.property.amenities}</div>
+          </Col>
+          <Col className="fullPropDetsCol" xs="4">
+            <h5>House Rules:</h5>
+            <div>{this.state.property.house_rules}</div>
+          </Col>
 
-                    <Col className="fullPropDetsCol" xs="4">
-                        <h5>Address:</h5>
-                        <div>{this.state.property.street_address}</div>
-                        <div>{this.state.property.city}</div>
-                        <div>{this.state.property.state}</div>
-                        <div>{this.state.property.zip_code}</div>
-                    </Col>
-                    <Col className="fullPropDetsCol" xs="4">
-                        <h5>Amenities:</h5>
-                        <div>{this.state.property.amenities}</div>
-                    </Col>
-                    <Col className="fullPropDetsCol" xs="4">
-                        <h5>House Rules:</h5>
-                        <div>{this.state.property.house_rules}</div>
-                    </Col>
+        </Row>
+        <Row>
+          <Col>
+            <ToastContainer/>
+            <Button className={`reservationBtn disabled`} onClick={this.makeReservation}>
+              <span className="reservationBtnText">Reserve this room</span>
+            </Button>
+          </Col>
+        </Row>
+      </Container>
 
-                </Row>
-                <Row>
-                    <Col>
-                      <ToastContainer/>
-                        <Button className={`reservationBtn disabled`} onClick={this.makeReservation}>
-                            <span className="reservationBtnText">Reserve this room</span>
-                        </Button>
-                    </Col>
-                </Row>
-            </Container>
-
-        )
-    }
+    )
+  }
 }
 
 function mapStateToProps(state) {
-    return {properties: state.properties}
+  return {properties: state.properties}
 }
 
 // export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));

@@ -32,6 +32,21 @@ body{
   overflow: scroll;
 }
 
+.filterBox {
+  position: absolute;
+  min-width: 150px;
+  min-height: 450px;
+  left: 0px;
+  margin-top: 30px;
+  background: rgba(38, 45, 56, 0.7);
+  border-radius: 5px;
+  color: #e2e5d5;
+}
+
+.cardHolder {
+  margin-top: 50px;
+}
+
 /*----------NAV BAR------------------*/
 
 .navItem {
@@ -57,7 +72,7 @@ body{
 /*----------PROPERTY CARDS------------------*/
 
 .ListAllProperties{
-  margin-top: 50px;
+  margin-top: 20% !important;
   overflow: auto;
 }
 
@@ -216,7 +231,16 @@ body{
   color: rgba(226, 229, 213, 1.0);
 }
 
-/*  */
+
 .toastify{
   margin-top: 80vh;
+
+::-webkit-scrollbar
+{
+    width: 0px;
+}
+::-webkit-scrollbar-track-piece
+{
+    background-color: transparent;
+    -webkit-border-radius: 6px;
 }
