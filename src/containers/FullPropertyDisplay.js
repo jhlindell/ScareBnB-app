@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 const LOCAL_URL = 'http://localhost:8080/api';
 const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
-const URL = LOCAL_URL;
+const URL = HEROKU_URL;
 
 class FullPropertyDisplay extends React.Component {
   constructor(props) {
