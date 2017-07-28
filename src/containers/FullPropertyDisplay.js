@@ -13,7 +13,8 @@ class FullPropertyDisplay extends React.Component {
     super(props);
     this.state = {
       property: {},
-      owner: {}
+      owner: {},
+      displayScare: false
     };
   }
 
@@ -26,6 +27,7 @@ class FullPropertyDisplay extends React.Component {
         this.setState({owner: user.data[0]});
       });
     });
+    this.jumpScareTimer();
   }
 
   makeReservation = (event) => {
@@ -41,12 +43,24 @@ class FullPropertyDisplay extends React.Component {
     })
   }
 
+  jumpScareTimer(){
+    setTimeout(() => this.changeScareState(true), 5000);
+    setTimeout(() => this.changeScareState(false), 6000);
+  }
+
+  changeScareState(scareState){
+    this.setState({displayScare: scareState});
+  }
+
   render() {
     if (!this.state.property.id) {
-      return <div>
-        Loading...</div>
+      return <div>Loading...</div>
     }
-
+    if(this.state.displayScare){
+      return (<div>
+        <img className="jumpScare" src="/images/jumpscare.jpg" />
+      </div> )
+    } else {
     return (
       <Container className="fullPropContainer">
         <Row className="fullPropDetails">
@@ -104,7 +118,10 @@ class FullPropertyDisplay extends React.Component {
       </Container>
 
     )
+    }
   }
 }
+
+
 
 export default FullPropertyDisplay

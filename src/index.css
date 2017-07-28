@@ -269,3 +269,9 @@ body{
 .propTextColor {
   color: #999b90;
 }
+
+.jumpScare {
+  position:fixed;
+  z-index: 200;
+  width: 100%;
+}
