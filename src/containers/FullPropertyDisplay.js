@@ -9,6 +9,7 @@ const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
 const URL = LOCAL_URL;
 
 class FullPropertyDisplay extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -28,18 +29,26 @@ class FullPropertyDisplay extends React.Component {
     });
   }
 
-  makeReservation = (event) => {
-    if (this.state.property.bookedOnHalloween) {
-      // console.log("already booked");
-      toast('This room has already been booked');
-      return
-    }
-    event.preventDefault()
-    axios.patch(`${URL}/properties/${this.props.match.params.id}`, {bookedOnHalloween: true}).then((data) => {
-      // console.log(data);
-      this.setState({property: data.data});
-    })
-  }
+
+    makeReservation = (event) => {
+      console.log(this.state.owner.email, "email");
+      if(!this.state.property.bookedOnHalloween){
+
+        window.location.href = `mailto:${this.state.owner.email}?subject=${"Interested in booking a reservation"}&body=`;
+      }
+
+
+        if (this.state.property.bookedOnHalloween) {
+            console.log("already booked");
+            console.log(toast('This room has already been booked'));
+            return
+        }
+        event.preventDefault()
+        axios.patch(`${URL}/properties/${this.props.match.params.id}`, {bookedOnHalloween: true}).then((data) => {
+            console.log(data);
+            this.setState({property: data.data});
+        })
+      }
 
   render() {
     if (!this.state.property.id) {
@@ -107,4 +116,10 @@ class FullPropertyDisplay extends React.Component {
   }
 }
 
+
+function mapStateToProps(state) {
+  return {properties: state.properties}
+}
+
+// export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));
 export default FullPropertyDisplay
