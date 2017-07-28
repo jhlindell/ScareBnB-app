@@ -1,21 +1,20 @@
 import React from "react";
 import {Button, Row, Col, Container} from 'reactstrap';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-const API_URL = 'http://localhost:8080/api';
+const LOCAL_URL = 'http://localhost:8080/api';
 const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
-const URL = HEROKU_URL;
+const URL = LOCAL_URL;
 
 class FullPropertyDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       property: {},
-      owner: {}
+      owner: {},
+      displayScare: false
     };
   }
 
@@ -28,27 +27,46 @@ class FullPropertyDisplay extends React.Component {
         this.setState({owner: user.data[0]});
       });
     });
+    // this.jumpScareTimer();
   }
 
+
   makeReservation = (event) => {
+    console.log(this.state.owner.email, "email");
+    if(!this.state.property.bookedOnHalloween){
+
+      window.location.href = `mailto:${this.state.owner.email}?subject=${"Interested in booking a reservation"}&body=`;
+    }
     if (this.state.property.bookedOnHalloween) {
-      // console.log("already booked");
-      toast('This room has already been booked');
-      return
+        console.log("already booked");
+        console.log(toast('This room has already been booked'));
+        return
     }
     event.preventDefault()
     axios.patch(`${URL}/properties/${this.props.match.params.id}`, {bookedOnHalloween: true}).then((data) => {
-      // console.log(data);
-      this.setState({property: data.data});
-    })
+        console.log(data);
+        this.setState({property: data.data});
+    });
+  }
+
+  jumpScareTimer(){
+    setTimeout(() => this.changeScareState(true), 5000);
+    setTimeout(() => this.changeScareState(false), 6000);
+  }
+
+  changeScareState(scareState){
+    this.setState({displayScare: scareState});
   }
 
   render() {
     if (!this.state.property.id) {
-      return <div>
-        Loading...</div>
+      return <div>Loading...</div>
     }
-
+    if(this.state.displayScare){
+      return (<div>
+        <img className="jumpScare" src="/images/jumpscare.jpg" />
+      </div> )
+    } else {
     return (
       <Container className="fullPropContainer">
         <Row className="fullPropDetails">
@@ -87,6 +105,14 @@ class FullPropertyDisplay extends React.Component {
           </Col>
 
         </Row>
+        <Row className="fullPropDetails">
+          <Col className="fullPropDetsCol" xs="1">
+            <h5 className="propTextColor">When:</h5>
+          </Col>
+          <Col className="fullPropDetsCol" xs="4">
+            <div className="propTextColor">Halloween, 2017</div>
+          </Col>
+        </Row>
         <Row>
           <Col>
             <ToastContainer/>
@@ -96,14 +122,9 @@ class FullPropertyDisplay extends React.Component {
           </Col>
         </Row>
       </Container>
-
     )
+    }
   }
 }
 
-function mapStateToProps(state) {
-  return {properties: state.properties}
-}
-
-// export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));
 export default FullPropertyDisplay

@@ -3,7 +3,7 @@ import React from "react";
 class Background extends React.Component {
   render(){
     return (
-        <img src="/images/foggy-mist-forest-trees-42263.jpeg" className="backgroundImage" alt="a something should go here"/>
+        <img src="/images/foggy-mist-forest-trees-42263.jpg" className="backgroundImage" alt="a something should go here"/>
     );
   }
 }

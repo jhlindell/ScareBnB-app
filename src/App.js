@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ListAllProperties from "./containers/ListAllProperties";
 import NavBar from "./components/NavBar";
+import LandingPage from "./components/LandingPage";
 import FullPropertyDisplay from "./containers/FullPropertyDisplay";
 import PostProperty from "./containers/PostProperty";
 import Background from "./components/Background";
@@ -16,11 +17,12 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Route path="/"  component={NavBar} />
-          <Route path="/"  component={Background} />
-          <Route exact path="/" component={ListAllProperties} />
-          <Route path="/postproperty" component={PostProperty} />
-          <Route path="/property/:id" component={FullPropertyDisplay} />
+          <Route path="/bg"  component={NavBar} />
+          <Route path="/bg"  component={Background} />
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/bg/listallproperties" component={ListAllProperties} />
+          <Route path="/bg/postproperty" component={PostProperty} />
+          <Route path="/bg/property/:id" component={FullPropertyDisplay} />
         </div>
       </Router>
     )
