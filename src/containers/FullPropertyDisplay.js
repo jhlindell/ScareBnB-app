@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.min.css';
 
 const API_URL = 'http://localhost:8080/api';
 const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
-const URL = HEROKU_URL;
+const URL = API_URL;
 
 class FullPropertyDisplay extends React.Component {
 
@@ -34,7 +34,11 @@ class FullPropertyDisplay extends React.Component {
 
     makeReservation = (event) => {
       console.log(this.state.owner.email, "email");
-      window.location.href = `mailto:${this.state.owner.email}?subject=${"Interested in booking a reservation"}&body=`;
+      if(!this.state.property.bookedOnHalloween){
+
+        window.location.href = `mailto:${this.state.owner.email}?subject=${"Interested in booking a reservation"}&body=`;
+      }
+
 
         if (this.state.property.bookedOnHalloween) {
             console.log("already booked");
