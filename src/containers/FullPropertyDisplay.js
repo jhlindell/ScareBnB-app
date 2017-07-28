@@ -3,6 +3,7 @@ import {Button, Row, Col, Container} from 'reactstrap';
 import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import Sound from 'react-sound';
 
 const LOCAL_URL = 'http://localhost:8080/api';
 const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
@@ -27,7 +28,7 @@ class FullPropertyDisplay extends React.Component {
         this.setState({owner: user.data[0]});
       });
     });
-    // this.jumpScareTimer();
+    this.jumpScareTimer();
   }
 
 
@@ -65,6 +66,11 @@ class FullPropertyDisplay extends React.Component {
     if(this.state.displayScare){
       return (<div>
         <img className="jumpScare" src="/images/jumpscare.jpg" />
+        <Sound
+          url="/Scream.mp3"
+          playStatus={Sound.status.PLAYING}
+          playFromPosition={300 /* in milliseconds */}
+        />
       </div> )
     } else {
     return (
