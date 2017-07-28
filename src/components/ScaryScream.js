@@ -5,7 +5,7 @@ class ScaryScream extends React.Component {
   return (
     <Sound
 
-      
+
       playFromPosition={3000 /* in milliseconds */}
       onLoading={this.handleSongLoading}
       onPlaying={this.handleSongPlaying}

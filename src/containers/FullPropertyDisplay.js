@@ -51,8 +51,8 @@ class FullPropertyDisplay extends React.Component {
   }
 
   jumpScareTimer(){
-    setTimeout(() => this.changeScareState(true), 5000);
-    setTimeout(() => this.changeScareState(false), 6000);
+    setTimeout(() => this.changeScareState(true), 10000);
+    setTimeout(() => this.changeScareState(false), 11000);
   }
 
   changeScareState(scareState){
