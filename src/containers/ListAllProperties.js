@@ -93,15 +93,3 @@ function spinDollHead(){
   let rotation = randomMove();
   $("#dollhead").transition({rotate: rotation}, 2000);
 }
-
-//we'll use this later
-{/* <div className="filterBox">
-  <Form>
-    <FormGroup>
-      <Label for="exampleEmail">Email</Label>
-      <Input type="email" name="email" id="exampleEmail" onChange={(e) => {
-        this.handleInputChange(e)
-      }} placeholder="with a placeholder"/>
-    </FormGroup>
-  </Form>
-</div> */}

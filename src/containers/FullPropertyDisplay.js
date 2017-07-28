@@ -27,20 +27,26 @@ class FullPropertyDisplay extends React.Component {
         this.setState({owner: user.data[0]});
       });
     });
-    this.jumpScareTimer();
+    // this.jumpScareTimer();
   }
 
+
   makeReservation = (event) => {
+    console.log(this.state.owner.email, "email");
+    if(!this.state.property.bookedOnHalloween){
+
+      window.location.href = `mailto:${this.state.owner.email}?subject=${"Interested in booking a reservation"}&body=`;
+    }
     if (this.state.property.bookedOnHalloween) {
-      // console.log("already booked");
-      toast('This room has already been booked');
-      return
+        console.log("already booked");
+        console.log(toast('This room has already been booked'));
+        return
     }
     event.preventDefault()
     axios.patch(`${URL}/properties/${this.props.match.params.id}`, {bookedOnHalloween: true}).then((data) => {
-      // console.log(data);
-      this.setState({property: data.data});
-    })
+        console.log(data);
+        this.setState({property: data.data});
+    });
   }
 
   jumpScareTimer(){
@@ -116,12 +122,9 @@ class FullPropertyDisplay extends React.Component {
           </Col>
         </Row>
       </Container>
-
     )
     }
   }
 }
-
-
 
 export default FullPropertyDisplay

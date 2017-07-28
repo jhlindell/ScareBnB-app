@@ -4,7 +4,6 @@ import { Card,CardText, CardBlock,
 import {Link} from 'react-router-dom';
 
 class PropertyCard extends React.Component {
-
   render(){
     return (
       <Col xs="12" sm="6" md="4" className="PropertyCardFade">
@@ -21,7 +20,7 @@ class PropertyCard extends React.Component {
             {this.props.property.description}
           </CardText>
         </CardBlock>
-        <Link to={`/property/${this.props.property.id}`}>
+        <Link to={`/bg/property/${this.props.property.id}`}>
           <Button className="cardButton">
             <span className="cardButtonText">
               More Info

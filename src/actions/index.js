@@ -2,7 +2,6 @@ import axios from 'axios';
 const LOCAL_URL = 'http://localhost:8080/api/properties';
 const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api/properties';
 const URL = LOCAL_URL;
-
 export function selectProperty(property) {
   return {
     type: 'SELECT_PROPERTY',
