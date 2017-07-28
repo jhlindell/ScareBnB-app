@@ -1,18 +1,15 @@
 import React from "react";
 import {
-  Container,
-  Input,
-  Label,
   Row,
   Col,
-  Form,
-  FormGroup
 } from 'reactstrap';
 import PropertyCard from '../components/propertyCard';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {selectProperty} from '../actions/index';
 import {getAllProperties} from '../actions/index';
+import $ from 'jquery';
+require('jquery.transit');
 
 class ListAllProperties extends React.Component {
   constructor(props) {
@@ -29,6 +26,7 @@ class ListAllProperties extends React.Component {
 
   componentDidMount() {
     this.props.getAllProperties();
+    this.spinInterval();
   }
 
   renderList() {
@@ -40,12 +38,25 @@ class ListAllProperties extends React.Component {
     });
   }
 
+  spinInterval(){
+    setInterval(spinDollHead, 2000)
+  }
+
   render() {
     return (
 
       <Container-fluid className="ListAllProperties">
         <Row className="cardHolder">
-          <Col xs='2'></Col>
+          <Col xs='2'>
+            <img id="dollhead"
+              width="150px;"
+              src="/images/scarydoll-head.png"
+              alt="scary doll"/>
+            <img id="dollbody"
+              width="150px;"
+              src="/images/scarydoll-body.png"
+              alt="scary doll"/>
+          </Col>
           <Col xs='9'>
             <Row>
               {this.renderList()}
@@ -69,6 +80,19 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListAllProperties);
+
+function randomMove(){
+  if(Math.random() > 0.5){
+    return Math.ceil(Math.random() * 360) + "deg";
+  } else {
+    return Math.ceil(Math.random() * -360) + "deg";
+  }
+}
+
+function spinDollHead(){
+  let rotation = randomMove();
+  $("#dollhead").transition({rotate: rotation}, 2000);
+}
 
 //we'll use this later
 {/* <div className="filterBox">

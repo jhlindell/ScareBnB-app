@@ -5,6 +5,8 @@
   "dependencies": {
     "axios": "^0.16.2",
     "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.2.1",
+    "jquery.transit": "^0.9.12",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.0",
     "react-addons-transition-group": "^15.6.0",
@@ -23,4 +25,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
+
 }

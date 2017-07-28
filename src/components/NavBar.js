@@ -1,5 +1,5 @@
 import React from "react";
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem} from 'reactstrap';
 import {Link} from 'react-router-dom'
 
 
@@ -22,7 +22,5 @@ class NavBar extends React.Component {
     );
   }
 }
-
-{/* <NavLink href="/postproperty" className="navBarText">Post a room</NavLink> */}
 
 export default NavBar;

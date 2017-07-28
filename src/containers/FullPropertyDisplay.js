@@ -1,14 +1,12 @@
 import React from "react";
 import {Button, Row, Col, Container} from 'reactstrap';
-import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom';
 import axios from 'axios';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-const API_URL = 'http://localhost:8080/api';
+const LOCAL_URL = 'http://localhost:8080/api';
 const HEROKU_URL = 'https://scarebnb-db.herokuapp.com/api';
-const URL = HEROKU_URL;
+const URL = LOCAL_URL;
 
 class FullPropertyDisplay extends React.Component {
   constructor(props) {
@@ -20,9 +18,11 @@ class FullPropertyDisplay extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`${URL}/properties/${this.props.match.params.id}`).then((property) => {
+    axios.get(`${URL}/properties/${this.props.match.params.id}`)
+    .then((property) => {
       this.setState({property: property.data[0]});
-      axios.get(`${URL}/users/${this.state.property.owner_id}`).then((user) => {
+      axios.get(`${URL}/users/${this.state.property.owner_id}`)
+      .then((user) => {
         this.setState({owner: user.data[0]});
       });
     });
@@ -85,6 +85,14 @@ class FullPropertyDisplay extends React.Component {
           </Col>
 
         </Row>
+        <Row className="fullPropDetails">
+          <Col className="fullPropDetsCol" xs="1">
+            <h5 className="propTextColor">When:</h5>
+          </Col>
+          <Col className="fullPropDetsCol" xs="4">
+            <div className="propTextColor">Halloween, 2017</div>
+          </Col>
+        </Row>
         <Row>
           <Col>
             <ToastContainer/>
@@ -99,9 +107,4 @@ class FullPropertyDisplay extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {properties: state.properties}
-}
-
-// export default withRouter(connect(mapStateToProps)(FullPropertyDisplay));
 export default FullPropertyDisplay
